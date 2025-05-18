@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="en" style="--vh: 8.18px;">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Luxury Shop</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap" rel="stylesheet">
+    <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
+    <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
+    <link href="https://cdnfonts.com/css/911-porscha" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/406511b0ae.js" crossorigin="anonymous"></script>
+
+</head>
+<body>
+
+    <!-- Header Section with Full-Screen Image -->
+
+    <div class="scroll-snap">
+    <header>
+        <div class="hero" id="home">
+            <div class="inside">
+                <div class="topnav">
+                <a href="#home" class="nav-link">Home</a>
+                <a href="#sale" class="nav-link">Cars For Sale</a>
+                <a href="#shop" class="nav-link">Shop</a>
+                <div class="navright">
+                <a href="#about" class="nav-link">About</a>
+                <a href="pages\Contact.html">Contact</a>
+                <a href="#menu" class="nav-link">Menu</a>
+                </div>
+
+                <div class="logo">
+                    <img src="images\RR logo.svg">
+                </div>
+            
+                </div>
+         </div>
+         <div class="bg-video">
+            <img src="https://images.unsplash.com/photo-1594420307817-3b626ca9578a?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" class="bg-clip">
+
+            <div class="black-box"></div>
+         </div>
+
+            <div class="hero-text">
+                <h1>THE <br> MERCEDES-AMG.</h1>
+                <a href="pages/Mercedes - AMG S 63.html">Book Now</a>
+            </div>
+        </div>
+    </header>
+
+    <script>
+      document.querySelectorAll('.nav-link').forEach(link => {
+        link.addEventListener('click', function (e) {
+          e.preventDefault();
+          document.querySelector(this.getAttribute('href')).scrollIntoView({
+            behavior: 'smooth'
+          });
+        });
+      });
+  
+      window.addEventListener('scroll', () => {
+        const sections = document.querySelectorAll('section');
+        let currentSection = '';
+  
+        sections.forEach(section => {
+          const sectionTop = section.offsetTop;
+          const sectionHeight = section.offsetHeight;
+  
+          if (scrollY >= sectionTop - sectionHeight / 3) {
+            currentSection = section.getAttribute('id');
+          }
+        });
+  
+        document.querySelectorAll('.nav-link').forEach(link => {
+          link.classList.remove('active');
+          if (link.getAttribute('href') === `#${currentSection}`) {
+            link.classList.add('active');
+          }
+        });
+      });
+    </script>
+
+    <!-- Spector Section -->
+<!--
+    <div class="spector">
+        <div class="spector-img">
+            <img src="https://www.rolls-roycemotorcars.com/content/dam/rrmc/marketUK/rollsroycemotorcars_com/1-0-home/bb-spectre/D-GREENSPECTRE-HP.png/jcr:content/renditions/cq5dam.web.1920.webp">
+        </div>
+        <div class="spector-text">
+            <h1>SPECTER</h1>
+            <p>BEYOND DESIRE</p>
+        </div>
+        <div class="spector-button">
+            <a href="google.com">
+                <button>Discover More</button>
+            </a>
+    </div>
+-->
+    <!-- Services Section -->
+<!--
+    <div class="container-img">
+      <div class="image-panel" style="background-image: url('https://picsum.photos/id/1015/800/400');" data-delay="0"></div>
+      <div class="image-panel" style="background-image: url('https://picsum.photos/id/1016/800/400');" data-delay="0.7"></div>
+      <div class="image-panel" style="background-image: url('https://picsum.photos/id/1018/800/400');" data-delay="1.4"></div>
+    </div>
+  
+    <script>
+      const panels = document.querySelectorAll('.image-panel');
+  
+      const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            const delay = entry.target.getAttribute('data-delay') || '0';
+            setTimeout(() => {
+              entry.target.classList.add('visible');
+            }, parseFloat(delay) * 1000);
+          }
+        });
+      }, {
+        threshold: 0.6
+      });
+  
+      panels.forEach(panel => observer.observe(panel));
+    </script>
+  -->
+    <section class="services" id="sale">
+      <a href="pages\911 Carrera T.html">
+            <div class="card" data-delay="0.2">
+              <img 
+                src="https://images.unsplash.com/photo-1633252919229-23ab3f9d2b54?q=80&w=2127&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                alt="911 Carrera T"
+              />
+              <div class="card-text">The new 911 Carrera T.</div>
+            </div>
+        </a>
+        <a href="pages\The Macan.html">
+            <div class="card" data-delay="0.3">
+              <img 
+                src="https://images.unsplash.com/photo-1736794111706-448172359adc?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                alt="Macan"
+              />
+              <div class="card-text">The Macan.</div>
+            </div>
+        </a>
+        <a href="pages\911 GT3.html">
+            <div class="card" data-delay="0.4">
+              <img 
+                src="https://images-porsche.imgix.net/-/media/F41DFC33F9A8497FBC6FD9576CDC867B_DC18F259E8EC49C79BFBBA86EEB98A31_CZ23V20OX0023-911-gt3-rs-rear?w=1759&q=85&auto=format"
+
+                alt="911 GT3 RS"
+              >
+              <div class="card-text">The 911 GT3.</div>
+            </div>
+        </a>
+    </section>
+
+    <script>
+      const panels = document.querySelectorAll('.card');
+  
+      const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            const delay = entry.target.getAttribute('data-delay') || '0';
+            setTimeout(() => {
+              entry.target.classList.add('visible');
+            }, parseFloat(delay) * 1000);
+          }
+        });
+      }, {
+        threshold: 0.6
+      });
+  
+      panels.forEach(panel => observer.observe(panel));
+    </script>
+
+     <!--G-class section-->
+    <h1></h1>
+     <div class="g63">
+        <div class="g63-img">
+            <img src="images\Gwagon.jpg" alt="Gwagon">
+        </div>
+            <div class="g63-text">
+                <h1>Experience our G-Class</h1>
+                <p>More than just a car — it's a statement. Embrace power, luxury, and iconic design in one legendary package.</p>
+                <div class="g63button">
+                    <a href="pages\Mercedes AMG G 63 Black.html">
+                      <button>Discover More</button>
+                    </a>
+                 </div>
+             </div>
+        </div>
+
+        <!-- Slider section -->
+
+        <div class="slider-section" id="shop">
+          <h2>Explore More Cars</h2>
+          <div class="slider-wrapper">
+            <button class="slider-arrow left-arrow">&#8249;</button> <!-- Left Arrow -->
+            <div class="slider-container">
+              <div class="slider-item">
+                <a href="pages/rangerover.html">
+                <img src="https://www.brabus.com/_Resources/Persistent/6/6/b/e/66be38426d9807537f254ca3cb62fd27bb470cde/BRABUS%20600%20PEETCH_LZ408_Studio_klein%20%2837%29-1170x780.jpg" alt="Brabus 600 Peetch">
+                <h3>BRABUS 600 PEETCH</h3>
+                <p>based on Range Rover P530</p>
+              </a>
+              </div>
+              <div class="slider-item">
+                <a href="pages/Mercedes - AMG S 63.html">
+                <img src="https://www.brabus.com/_Resources/Persistent/a/c/7/5/ac75150d1e16fd05a4085a6110bf58faec519c59/001_BRABUS_GLS_900_BICHROMATIC_klein%20%283%29-1170x780.jpg" alt="Brabus 900 Bichromatic">
+                <h3>BRABUS 900 BICHROMATIC</h3>
+                <p>based on Mercedes-AMG GLS 63</p>
+              </a>
+              </div>
+              <div class="slider-item">
+                <a href="pages/Mercedes AMG G 63 Green.html">
+                <img src="https://www.brabus.com/_Resources/Persistent/2/4/f/c/24fcb0f745cc20dfc213eff6b8219bb705d4dff0/BRABUS%20800_Mean%20Green_klein%20%2841%29-1170x780.jpg" alt="Brabus 800 Mean Green">
+                <h3>BRABUS 800 MEAN GREEN</h3>
+                <p>based on Mercedes-AMG G 63 (W 465)</p>
+              </a>
+              </div>
+
+              <div class="slider-item">
+                <a href="pages/Mercedes AMG G 63 Deep Blue.html">
+                <img src="https://www.brabus.com/_Resources/Persistent/2/6/7/9/26791f27d5465f1b9d9da48abb08381e3f05cdc8/BRABUS%20800_Deep%20Blue_Studio%20klein%20%281%29-1170x780.jpg" alt="Brabus 600 Peetch">
+                <h3>BRABUS 800 DEEP BLUE</h3>
+                <p>based on Mercedes-AMG G 63 (W 465)</p>
+                </a>
+              </div>
+              <div class="slider-item">
+                <a href="pages/Mercedes AMG G 63 Black.html">
+                <img src="https://www.brabus.com/_Resources/Persistent/9/5/2/9/95297ab1bb4b49bc95f3e8538382f6217cf5aa87/BRABUS%20XLP900%206x6%20Deepblue_klein%20%283%29-1170x780.jpg" alt="Brabus 900 Bichromatic">
+                <h3>BRABUS XLP 900 6x6 DEEP BLUE</h3>
+                <p>based on Mercedes-AMG G 63 (W 463A)</p>
+                </a>
+              </div>
+              <div class="slider-item">
+                <a href="pages/Porsche 911.html">
+                <img src="https://www.brabus.com/_Resources/Persistent/2/8/4/2/2842beb8baf2188dc1d14624f085ce658a66e9b3/BRABUS%20900%20Peetch_Porsche_LZ189_Studio_klein%20%2839%29-1170x780.jpg" alt="Brabus 800 Mean Green">
+                <h3>BRABUS 900 PEETCH</h3>
+                <p>based on Porsche 911 Turbo S Cabriolet</p>
+                </a>
+              </div>
+
+              <div class="slider-item">
+                <a href="pages/Porsche 911 Green.html">
+                <img src="https://www.brabus.com/_Resources/Persistent/a/4/0/3/a403faaac41c46e22653c5e5706b06f89f87dd2a/002_BRABUS_ROCKET%20900R_mean_green_3_4_front-1170x780.jpg" alt="Brabus 600 Peetch">
+                <h3>BRABUS 900 ROCKET R MEAN GREEN</h3>
+                <p>based on Porsche 911 Turbo S Coupe</p>
+                </a>
+              </div>
+              <div class="slider-item">
+                <a href="pages/Porsche 911 Blue.html">
+                <img src="https://www.brabus.com/_Resources/Persistent/6/f/9/e/6f9eeaf39817c103a60248c660aac01e445d9824/001_BRABUS_900_Deep%20Blue_klein%20%284%29-1170x780.jpg" alt="Brabus 900 Bichromatic">
+                <h3>BRABUS 900 DEEP BLUE</h3>
+                <p>based on Porsche 911 Turbo S Cabriolet</p>
+                </a>
+              </div>
+
+              <div class="slider-item">
+                <a href="pages/rangerover.html">
+                <img src="https://www.brabus.com/_Resources/Persistent/6/6/b/e/66be38426d9807537f254ca3cb62fd27bb470cde/BRABUS%20600%20PEETCH_LZ408_Studio_klein%20%2837%29-1170x780.jpg" alt="Brabus 600 Peetch">
+                <h3>BRABUS 600 PEETCH</h3>
+                <p>based on Range Rover P530</p>
+              </a>
+              </div>
+              <div class="slider-item">
+                <a href="pages/Mercedes - AMG S 63.html">
+                <img src="https://www.brabus.com/_Resources/Persistent/a/c/7/5/ac75150d1e16fd05a4085a6110bf58faec519c59/001_BRABUS_GLS_900_BICHROMATIC_klein%20%283%29-1170x780.jpg" alt="Brabus 900 Bichromatic">
+                <h3>BRABUS 900 BICHROMATIC</h3>
+                <p>based on Mercedes-AMG GLS 63</p>
+              </a>
+              </div>
+              <div class="slider-item">
+                <a href="pages/Mercedes AMG G 63 Green.html">
+                <img src="https://www.brabus.com/_Resources/Persistent/2/4/f/c/24fcb0f745cc20dfc213eff6b8219bb705d4dff0/BRABUS%20800_Mean%20Green_klein%20%2841%29-1170x780.jpg" alt="Brabus 800 Mean Green">
+                <h3>BRABUS 800 MEAN GREEN</h3>
+                <p>based on Mercedes-AMG G 63 (W 465)</p>
+              </a>
+              </div>
+
+              <div class="slider-item">
+                <a href="pages/Mercedes AMG G 63 Deep Blue.html">
+                <img src="https://www.brabus.com/_Resources/Persistent/2/6/7/9/26791f27d5465f1b9d9da48abb08381e3f05cdc8/BRABUS%20800_Deep%20Blue_Studio%20klein%20%281%29-1170x780.jpg" alt="Brabus 600 Peetch">
+                <h3>BRABUS 800 DEEP BLUE</h3>
+                <p>based on Mercedes-AMG G 63 (W 465)</p>
+                </a>
+              </div>
+              <div class="slider-item">
+                <a href="pages/Mercedes AMG G 63 Black.html">
+                <img src="https://www.brabus.com/_Resources/Persistent/9/5/2/9/95297ab1bb4b49bc95f3e8538382f6217cf5aa87/BRABUS%20XLP900%206x6%20Deepblue_klein%20%283%29-1170x780.jpg" alt="Brabus 900 Bichromatic">
+                <h3>BRABUS XLP 900 6x6 DEEP BLUE</h3>
+                <p>based on Mercedes-AMG G 63 (W 463A)</p>
+                </a>
+              </div>
+              <div class="slider-item">
+                <a href="pages/Porsche 911.html">
+                <img src="https://www.brabus.com/_Resources/Persistent/2/8/4/2/2842beb8baf2188dc1d14624f085ce658a66e9b3/BRABUS%20900%20Peetch_Porsche_LZ189_Studio_klein%20%2839%29-1170x780.jpg" alt="Brabus 800 Mean Green">
+                <h3>BRABUS 900 PEETCH</h3>
+                <p>based on Porsche 911 Turbo S Cabriolet</p>
+                </a>
+              </div>
+
+              <div class="slider-item">
+                <a href="pages/Porsche 911 Green.html">
+                <img src="https://www.brabus.com/_Resources/Persistent/a/4/0/3/a403faaac41c46e22653c5e5706b06f89f87dd2a/002_BRABUS_ROCKET%20900R_mean_green_3_4_front-1170x780.jpg" alt="Brabus 600 Peetch">
+                <h3>BRABUS 900 ROCKET R MEAN GREEN</h3>
+                <p>based on Porsche 911 Turbo S Coupe</p>
+                </a>
+              </div>
+              <div class="slider-item">
+                <a href="pages/Porsche 911 Blue.html">
+                <img src="https://www.brabus.com/_Resources/Persistent/6/f/9/e/6f9eeaf39817c103a60248c660aac01e445d9824/001_BRABUS_900_Deep%20Blue_klein%20%284%29-1170x780.jpg" alt="Brabus 900 Bichromatic">
+                <h3>BRABUS 900 DEEP BLUE</h3>
+                <p>based on Porsche 911 Turbo S Cabriolet</p>
+                </a>
+              </div>
+
+              
+
+            </div>
+            <button class="slider-arrow right-arrow">&#8250;</button> <!-- Right Arrow -->
+          </div>
+        </div>
+        <script>
+          const sliderContainer = document.querySelector('.slider-container');
+          const sliderItems = document.querySelectorAll('.slider-item');
+          const leftArrow = document.querySelector('.left-arrow');
+          const rightArrow = document.querySelector('.right-arrow');
+        
+          // Calculate the width of a single slider item
+          const itemWidth = sliderItems[0].offsetWidth;
+        
+          // Scroll left
+          leftArrow.addEventListener('click', () => {
+            sliderContainer.scrollBy({
+              left: -itemWidth,
+              behavior: 'smooth',
+            });
+          });
+        
+          // Scroll right
+          rightArrow.addEventListener('click', () => {
+            sliderContainer.scrollBy({
+              left: itemWidth,
+              behavior: 'smooth',
+            });
+          });
+        
+          // Auto-scroll functionality
+          let autoScroll = setInterval(() => {
+            sliderContainer.scrollBy({
+              left: itemWidth,
+              behavior: 'smooth',
+            });
+          }, 5000); // Adjust the interval as needed (e.g., 3000ms = 3 seconds)
+        
+          // Pause auto-scroll on hover
+          sliderContainer.addEventListener('mouseover', () => {
+            clearInterval(autoScroll);
+          });
+        
+          // Resume auto-scroll on mouse out
+          sliderContainer.addEventListener('mouseout', () => {
+            autoScroll = setInterval(() => {
+              sliderContainer.scrollBy({
+                left: itemWidth,
+                behavior: 'smooth',
+              });
+            }, 9000);
+          });
+        </script>
+
+    <!-- About Section with Parallax Effect -->
+
+    <div class="about" id="about">
+        <div class="porsche-content">
+          <h1>Find your new or pre-owned Porsche.</h1>
+          <p>
+            Making it easy to find your dream Car. Enter your location and browse
+            the best car offers available near you.
+          </p>
+          <div class="search-box">
+            <input type="text" placeholder="Enter City or ZIP Code" />
+            <span class="search-icon">🔍</span>
+          </div>
+        </div>
+        <div class="image-container">
+          <img
+            src="https://images-porsche.imgix.net/-/media/DBB5B21ECE2947CB8771FD9948199CD3_D4A989FDCF784F618352F5B1DC7E15C6_Enhanced-Finder?h=2120&iar=0&w=1500&ar=4%3A3&q=80&crop=faces%2Centropy%2Cedges&auto=format"
+            alt="Porsche Cars"
+          />
+        </div>
+      </div>
+
+    <!-- New Section -->
+
+    <section class="new-services">
+      <a href="pages/718-Boxster.html">
+        <div class="new-card" data-delay="0.2">
+          <img 
+            src="https://images.unsplash.com/photo-1629740081315-ecbc2619ad6a?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+            alt="Example 1"
+          />
+          <div class="new-card-text">718-Boxster</div>
+        </div>
+      </a>
+      <a href="pages/Panamera 4.html">
+        <div class="new-card" data-delay="0.3">
+          <img 
+            src="https://images.unsplash.com/photo-1611157817876-3b8ceb8c8bd7?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+            alt="Example 2"
+          />
+          <div class="new-card-text">Panamera 4</div>
+        </div>
+      </a>
+      <a href="pages/Cayenne.html">
+        <div class="new-card" data-delay="0.4">
+          <img 
+            src="https://images.unsplash.com/photo-1699325929994-b94ae0c8f552?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+            alt="Example 3"
+          />
+          <div class="new-card-text">Cayenne</div>
+        </div>
+      </a>
+    </section>
+
+    <script>
+      const newPanels = document.querySelectorAll('.new-card');
+
+const newObserver = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      const delay = entry.target.getAttribute('data-delay') || '0';
+      setTimeout(() => {
+        entry.target.classList.add('visible');
+      }, parseFloat(delay) * 1000);
+    }
+  });
+}, {
+  threshold: 0.6
+});
+
+newPanels.forEach(panel => newObserver.observe(panel));
+    </script>
+
+    <!-- Testimonials Section -->
+
+    <!--<section class="testimonials">
+        <h2>What Our Clients Say</h2>
+        <div class="testimonial-card">
+            <p>"A truly exceptional experience. The car was pristine, and the service was impeccable!"</p>
+            <h3>John Doe</h3>
+        </div>
+        <div class="testimonial-card">
+            <p>"Driving one of these cars made my trip unforgettable. Worth every penny!"</p>
+            <h3>Jane Smith</h3>
+        </div>
+    </section>
+  -->
+    <!-- Footer Section -->
+
+    <footer class="footer" id="menu">
+        <div class="region-language">
+          <strong>Current Region / Language</strong>
+          <p>et Ethiopia / English <a href="https://support.google.com/websearch/answer/3333234?hl=en&co=GENIE.Platform%3DAndroid">Change</a></p>
+        </div>
+    
+        <div class="footer-top">
+          <div class="footer-column">
+            <h4>Prices</h4>
+            <p>Check your car price.</p>
+            <a href="pages/check-prices.html">
+            <button>Check prices</button>
+          </a>
+          </div>
+          <div class="footer-column">
+            <h4>Locations & Contacts</h4>
+            <p>Do you have any questions?</p>
+            <a href="pages/Contact.html">
+            <button>Get in touch</button>
+          </a>
+          </div>
+          <div class="footer-column">
+            <h4>Social Media</h4>
+            <p>Get in touch with us via social media.</p>
+            <div class="social-icons">
+              <a href="https://www.facebook.com"><i class="fab fa-facebook-f"></i></a>
+              <a href="https://www.instagram.com"><i class="fab fa-instagram"></i></a>
+              <a href="https://www.pinterest.com"><i class="fab fa-pinterest-p"></i></a>
+              <a href="https://www.youtube.com"><i class="fab fa-youtube"></i></a>
+              <a href="https://www.twitter.com"><i class="fab fa-x-twitter"></i></a>
+              <a href="https://www.linkedin.com"><i class="fab fa-linkedin-in"></i></a>
+            </div>
+          </div>
+        </div>
+  
+    
+      </footer>
+
+        <!-- Contact Section -->
+<!--
+        <section class="contact">
+            <h2>Contact Us</h2>
+            <form>
+                <input type="text" placeholder="Your Name" required>
+                <input type="email" placeholder="Your Email" required>
+                <textarea placeholder="Your Message" required></textarea>
+                <button type="submit">Submit</button>
+            </form>
+        </section>
+-->
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
