@@ -1,0 +1,804 @@
+<!DOCTYPE html>
+<html lang="en" style="--vh: 8.18px;">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
+    <script src="https://kit.fontawesome.com/406511b0ae.js" crossorigin="anonymous"></script>
+    <title>Mercedes-AMG S 63</title>
+    <style>
+              * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f0f0f0;
+            color: #333;
+        }
+
+        .first-page {
+            position: relative;
+        }
+
+        .bg-video .bg-clip{
+            position: relative;
+            top: 0;
+            left: 0;
+            width: 100%;
+        }
+
+        /* Second Page Styling */
+
+        .second-page {
+        text-align: center;
+        padding: 160px;
+        background-color: #fff;
+        padding: 0;
+        }
+
+        .second-page .text h1 {
+        font-size: 2rem;
+        font-weight: bold;
+        margin-bottom: 30px;
+        }
+
+        .second-page .text p {
+        font-size: 1rem;
+        color: #666;
+        margin-bottom: 150px;
+        line-height: 1.5;
+        }
+
+        .second-page .text {
+            padding-top: 120px;
+        }
+
+        /* Performance Metrics Section */
+
+        .performance-metrics {
+        display: flex;
+        justify-content: space-around;
+        background-color: #f9f9f9;
+        padding: 100px 0;
+        border-top: 1px solid #ddd;
+        border-bottom: 1px solid #ddd;
+        width: 100%; /* Full width of the viewport */
+        margin: 0; /* Remove any default margins */
+        box-sizing: border-box;
+        }
+
+        .metric {
+        text-align: center;
+        color: #333;
+        }
+
+        .metric h2 {
+        position: relative;
+        top: 30px;
+        font-size: 6rem;
+        color: #b00000;
+        margin: 0;
+        font-weight: lighter;
+        }
+
+        .metric p {
+        position: relative;
+        top: -130px;
+        font-size: 1rem;
+        font-weight: bold;
+        margin: 5px 0;
+        text-transform: uppercase;
+        }
+
+        .metric span {
+        font-size: 0.9rem;
+        color: #888;
+        }
+
+        /* Third Page */
+
+        .third-page {
+            text-align: left;
+            padding: 100px 0;
+            padding-left: 200px;
+            background-color: #fff;
+            border-top: 1px solid #ddd;
+        }
+
+        .third-page h2 {
+            font-size: 2.5rem;
+            font-weight: lighter;
+            color: #333;
+            margin-bottom: 110px;
+        }
+
+        .third-page p {
+            font-size: 1.2rem;
+            color: #666;
+            line-height: 1.5;
+            margin-top: 20px;
+            text-align: left;
+            font-weight: lighter;
+        }
+
+/* Slider Container */
+
+.image-slider {
+  position: relative;
+}
+
+.slider-container {
+  display: flex;
+  flex-direction: row;
+  overflow-x: hidden;
+  background-color: #fff;
+  scroll-behavior: smooth;
+}
+
+.slider-item {
+  padding: 0 17px 0 0;
+}
+
+/* Navigation Arrows */
+
+.slider-arrow {
+  position: absolute;
+  top: 49%;
+  transform: translateY(-50%);
+  background-color: transparent;
+  border: none;
+  color: white;
+  font-size: 5rem;
+  cursor: pointer;
+  z-index: 10;
+  padding: 15px;
+  transition: color 0.1s ease;
+}
+
+.left-arrow {
+  left: 10px;
+}
+
+.right-arrow {
+  right: 10px;
+}
+
+.slider-arrow:hover {
+  color: rgb(179, 179, 179);
+}
+
+/* Responsive Design */
+
+@media (max-width: 768px) {
+  .image-slider {
+    width: 95%; /* Adjust width for smaller screens */
+  }
+
+  .slider-item img {
+    max-height: 400px; /* Adjust height for smaller screens */
+  }
+
+  .slider-arrow {
+    font-size: 1.5rem;
+    padding: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .slider-item img {
+    max-height: 300px; /* Adjust height for very small screens */
+  }
+
+  .slider-arrow {
+    font-size: 1.2rem;
+    padding: 8px;
+  }
+}
+
+/* Fourth Page */
+
+.fourth-page {
+  position: relative;
+
+}
+
+.full-card img {
+  width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+  padding: 0 0 0 0;
+}
+
+
+.nav-button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  font-size: 1rem;
+  z-index: 10;
+}
+
+.prev-button {
+  left: 10px;
+}
+
+.next-button {
+  right: 10px;
+}
+
+.full-card {
+  display: none;
+}
+
+.full-card.active {
+  display: block; 
+}
+
+/* Fifth Page */
+
+.fifth-page {
+  position: relative;
+  background-color: #fff;
+}
+
+.fifth-container {
+  display: flex;
+  flex-direction: row;
+  overflow-x: hidden;
+  background-color: #fff;
+  scroll-behavior: smooth;
+}
+
+.fifth-image {
+  padding: 0 15px 0 0;
+}
+
+.fifth-text {
+  font-family: 'poppins', sans-serif;
+  padding: 100px;
+}
+
+.fifth-text h2 {
+  font-size: 2.5rem;
+  font-weight: lighter;
+  color: #333;
+}
+
+.fifth-text .bold {
+  font-weight: bold;  
+}
+
+.fifth-text p {
+  font-size: 1.2rem;
+  color: #666;
+  line-height: 1.5;
+  margin-top: 40px;
+  text-align: left;
+  font-weight: lighter;
+}
+
+/* Footer */
+
+.footer {
+    position: relative;
+    background-color: #000000;
+    color: #fff;
+    padding-left: 30px;
+    padding-top: 30px;;
+    block-size: 550px;
+    font-size: 18px;
+    text-align: left;
+  }
+
+  .region-language {
+    margin-bottom: 30px;
+    padding: 30px;
+  }
+
+  .region-language strong {
+    display: block;
+    font-size: 1.1em;
+    margin-bottom: 5px;
+  }
+
+  .region-language p{
+    color: #fff;
+  }
+
+  .region-language a {
+    color: #fff;
+    text-decoration: underline;
+    margin-left: 10px;
+    font-size: 0.95em;
+  }
+
+  .footer-top,
+  .footer-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+    margin: 20px 0;
+    padding: 30px;
+    color: #fff;
+  }
+
+  .footer-column {
+    flex: 1;
+    min-width: 250px;
+    color: #fff;
+  }
+
+  .footer-column h4 {
+    font-size: 1.1em;
+    margin-bottom: 8px;
+  }
+
+  .footer-column p {
+    font-size: 0.95em;
+    margin-bottom: 10px;
+    color: #fff;
+  }
+
+  .footer-column button {
+    background-color: #fff;
+    color: #000;
+    padding: 20px 32px;
+    border: none;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 4px;
+    width: 300px;
+  }
+
+  .footer-column button:hover {
+    background-color: #b6b6b6;
+    transition: background-color 0.4s ease;
+  }
+
+  .social-icons {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+  }
+
+  .social-icons a {
+    background-color: #fff;
+    color: #000;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 4px;
+    font-size: 1.2em;
+    text-decoration: none;
+  }
+
+  .footer-links > div {
+    flex: 1;
+    min-width: 200px;
+  }
+
+  .footer-links p {
+    font-size: 0.95em;
+    margin: 6px 0;
+  }
+
+  .footer-bottom {
+    margin-top: 30px;
+    font-size: 0.8em;
+    color: #ccc;
+    line-height: 1.6;
+  }
+
+  .footer-bottom a {
+    color: #ccc;
+    text-decoration: underline;
+    margin-right: 8px;
+  }
+
+  /* Responsive Tweak */
+  @media (max-width: 768px) {
+    .footer-top, .footer-links {
+      flex-direction: column;
+    }
+  }
+
+
+    </style>
+</head>
+<body>
+    <div class="first-page">
+        <div class="bg-video">
+            <video autoplay muted loop playsinline class="bg-clip">
+                <source src="https://www.brabus.com/_Resources/Persistent/2/4/e/6/24e6b48f0ce78c1a2634ff212bf1ed7aff19a78f/BRABUS%201000%20S63_CINE_H264_WEB.mp4" type="video/mp4">
+        </div>
+    </div>
+        <div class="second-page">
+            <div class="text">
+              <h1>BRABUS 1000 ALL GRAY - MERCEDES-AMG S 63 E PERFORMANCE</h1>
+              <p>Power 735 kW / 1000 hp | Torque 1820 Nm | 0-100 km/h 3.1 s | Vmax 290 km/h / 180 mph<br>
+                Fuel Economy* combined 12,9 l/100km | Power consumption 33,2 (kWh/100 km) | CO2 295 g/km</p>
+            </div>
+            <div class="performance-metrics">
+              <div class="metric">
+                <h2>3,1</h2>
+                <p>0-100</p>
+                <span>KM/H</span>
+              </div>
+              <div class="metric">
+                <h2>1,820</h2>
+                <p>TORQUE</p>
+                <span>NM</span>
+              </div>
+              <div class="metric">
+                <h2>1,000</h2>
+                <p>POWER</p>
+                <span>HP</span>
+              </div>
+              <div class="metric">
+                <h2>290</h2>
+                <p>VMAX</p>
+                <span>KM/H</span>
+              </div>
+            </div>
+          </div>
+    <div class="third-page">
+        <h2>ALL GRAY EVERYTHING. BRABUS 1000  ALL GRAY.</h2>
+        <p>The BRABUS 1000 "ALL GRAY" is a unique transfer of the design ethos and power of the BRABUS ROCKET 1000 to a new platform.<br>Based on the Mercedes-AMG S 63 E Performance, this unapologetic Masterpiece supercar of the BRABUS Collection 2025 in-<br>herits the absolute maximum of what we have to offer. It was designed to captivate, impressing with a unique, monochrome<br>gray signature look and harnessing every cubic inch of its next-level performance figures in the creation of an undeniable 1-<br>Second-Wow effect.</p>
+    </div>
+
+    <div class="image-slider">
+        <button class="slider-arrow left-arrow">&#8249;</button> <!-- Left Arrow -->
+        <div class="slider-container">
+          <div class="slider-item">
+            <img src="https://www.brabus.com/_Resources/Persistent/0/1/7/1/017134a52550fda5ce5c0a1574f6ffc811bb8c03/BRABUS%201000%20All%20Gray_S63_OnLocation%20%2816%29-1170x780.jpg" 
+                 alt="MERCEDES-AMG G 63(1)">
+          </div>
+          <div class="slider-item">
+            <img src="https://www.brabus.com/_Resources/Persistent/7/4/8/5/748536e00326383eafb73000358884baa30dec67/BRABUS%201000%20All%20Gray_S63_OnLocation%20%2812%29-520x780.jpg" 
+                alt="MERCEDES-AMG G 63(2)">
+          </div>
+          <div class="slider-item">
+            <img src="https://www.brabus.com/_Resources/Persistent/9/2/9/b/929b0efe436b1eb126f93133ddf3f228a8e91d29/BRABUS%201000%20All%20Gray_S63_OnLocation%20%2846%29-1170x780.jpg" 
+            alt="MERCEDES-AMG G 63(3)">
+          </div>
+          <div class="slider-item">
+            <img src="https://www.brabus.com/_Resources/Persistent/e/7/d/8/e7d899cf6d70ae1b9c30639d94e19ae49aba70f6/BRABUS%201000%20All%20Gray_S63_OnLocation%20%2856%29-1170x780.jpg" 
+                alt="MERCEDES-AMG G 63(4)">
+          </div>
+          <div class="slider-item">
+            <img src="https://www.brabus.com/_Resources/Persistent/b/1/4/b/b14b8d4764089cefc72f102fd9593d27a1dc8ba1/BRABUS%201000%20All%20Gray_S63_OnLocation%20%2860%29-520x780.jpg" 
+                alt="MERCEDES-AMG G 63(5)">
+          </div>
+          <div class="slider-item">
+            <img src="https://www.brabus.com/_Resources/Persistent/a/5/4/f/a54f428882c7bf0a2f3b243777a44e6fdf518410/BRABUS%201000%20All%20Gray_S63_OnLocation%20%288%29-1170x780.jpg" 
+                alt="MERCEDES-AMG G 63(6)">
+          </div>
+
+          
+        </div>
+        <button class="slider-arrow right-arrow">&#8250;</button> <!-- Right Arrow -->
+      </div>
+
+      <script>
+document.addEventListener('DOMContentLoaded', () => {
+  const sliderContainer = document.querySelector('.slider-container');
+  const leftArrow = document.querySelector('.left-arrow');
+  const rightArrow = document.querySelector('.right-arrow');
+  const sliderItems = Array.from(document.querySelectorAll('.slider-item'));
+  const sliderItemWidth = sliderItems[0]?.offsetWidth || 0; // Get the width of one slider item
+  let currentIndex = sliderItems.length; // Start at the first original item after duplication
+
+  if (!sliderContainer || !sliderItems.length) {
+    console.error('Slider container or items not found!');
+    return;
+  }
+
+  // Duplicate slider items for seamless looping
+  sliderItems.forEach((item) => {
+    const clone = item.cloneNode(true);
+    sliderContainer.appendChild(clone); // Append clones to the end
+  });
+  sliderItems.forEach((item) => {
+    const clone = item.cloneNode(true);
+    sliderContainer.insertBefore(clone, sliderContainer.firstChild); // Prepend clones to the beginning
+  });
+
+  // Adjust scroll position to the first original item
+  window.addEventListener('load', () => {
+    sliderContainer.scrollLeft = sliderItemWidth * currentIndex;
+  });
+
+  // Function to update the slider position
+  function updateSliderPosition() {
+    sliderContainer.style.scrollBehavior = 'smooth';
+    sliderContainer.scrollLeft = currentIndex * sliderItemWidth;
+  }
+
+  // Event listener for left arrow
+  leftArrow?.addEventListener('click', () => {
+    currentIndex--;
+    updateSliderPosition();
+
+    // Reset position if at the first clone
+    sliderContainer.addEventListener('transitionend', () => {
+      if (currentIndex < sliderItems.length) {
+        sliderContainer.style.scrollBehavior = 'auto'; // Disable smooth scrolling temporarily
+        currentIndex = sliderItems.length * 2 - 1; // Jump to the last original item
+        sliderContainer.scrollLeft = currentIndex * sliderItemWidth;
+      }
+    }, { once: true });
+  });
+
+  // Event listener for right arrow
+  rightArrow?.addEventListener('click', () => {
+    currentIndex++;
+    updateSliderPosition();
+
+    // Reset position if at the last clone
+    sliderContainer.addEventListener('transitionend', () => {
+      if (currentIndex >= sliderItems.length * 2) {
+        sliderContainer.style.scrollBehavior = 'auto'; // Disable smooth scrolling temporarily
+        currentIndex = sliderItems.length; // Jump to the first original item
+        sliderContainer.scrollLeft = currentIndex * sliderItemWidth;
+      }
+    }, { once: true });
+  });
+
+  // Debounce resize event to recalculate item width
+  let resizeTimeout;
+  window.addEventListener('resize', () => {
+    clearTimeout(resizeTimeout);
+    resizeTimeout = setTimeout(() => {
+      const newWidth = sliderItems[0]?.offsetWidth || 0;
+      if (newWidth !== sliderItemWidth) {
+        sliderContainer.style.scrollBehavior = 'auto';
+        sliderContainer.scrollLeft = currentIndex * newWidth;
+      }
+    }, 200);
+  });
+});
+</script>
+
+
+    <div class="fourth-page">
+      <div class="full-card">
+        <img src="https://www.brabus.com/_Resources/Persistent/a/5/e/8/a5e835932603d116549a8950bf8950cf0b13bde8/BRABUS%201000%20All%20Gray_AMG%20S%2063_Studio_klein%20%2834%29.jpg" alt="image1">
+      </div>
+    <div class="full-card">
+      <img src="https://www.brabus.com/_Resources/Persistent/c/d/e/5/cde5a8f713baf67cbdc625d93b092303b505cafc/BRABUS%201000%20All%20Gray_AMG%20S%2063_Studio_klein%20%2836%29.jpg" alt="image2">
+    </div>
+
+    <div class="full-card">
+      <img src="https://www.brabus.com/_Resources/Persistent/e/d/3/0/ed3016872446efdd54b997e1ab71481dbfba6ec4/BRABUS%201000%20All%20Gray_AMG%20S%2063_Studio_klein%20%2838%29.jpg" alt="image3">
+    </div>
+
+    <div class="full-card">
+      <img src="https://www.brabus.com/_Resources/Persistent/e/a/6/5/ea6535a535c4351b61f8c534f8e7dd46ae8d47f4/BRABUS%201000%20All%20Gray_AMG%20S%2063_Studio_klein%20%2840%29.jpg" alt="image4">
+    </div>
+
+    <div class="full-card">
+      <img src="https://www.brabus.com/_Resources/Persistent/6/a/d/2/6ad26310e3b56d499ac553631172eecfbbaa552f/BRABUS%201000%20All%20Gray_AMG%20S%2063_Studio_klein%20%2842%29.jpg" alt="image5">
+    </div>
+
+      </div>
+
+<script>
+      const fullCards = document.querySelectorAll('.fourth-page .full-card');
+const fourthPage = document.querySelector('.fourth-page');
+let currentIndex = 0;
+
+// Function to update the active image
+function updateActiveImage() {
+  fullCards.forEach((card, index) => {
+    card.classList.toggle('active', index === currentIndex);
+  });
+}
+
+// Show the first image initially
+updateActiveImage();
+
+// Event listener for clicking on the fourth-page
+fourthPage.addEventListener('click', () => {
+  currentIndex = (currentIndex + 1) % fullCards.length; // Loop back to the first image
+  updateActiveImage();
+});
+  </script>
+
+  <div class="fifth-page">
+    <button class="slider-arrow left-arrow">&#8249;</button> <!-- Left Arrow -->
+    <div class="fifth-container">
+    <div class="fifth-image">
+      <img src="https://www.brabus.com/_Resources/Persistent/4/e/4/b/4e4b71a45ad627ce5bf4b1a925ec67425e39cbde/BRABUS%201000%20All%20Gray_S63_OnLocation%20%2829%29-1170x780.jpg" alt="image6">
+    </div>
+    <div class="fifth-image">
+      <img src="https://www.brabus.com/_Resources/Persistent/2/d/8/2/2d82d565b1d1ea41b1650743fccbe5ac3db26a9d/BRABUS%201000%20All%20Gray_S63_OnLocation%20%2831%29-1170x780.jpg" alt="image7">
+    </div>
+    <div class="fifth-image">
+      <img src="https://www.brabus.com/_Resources/Persistent/c/9/8/7/c9871685fa3b35c9e9903a7da9ab6240f1d2aaff/BRABUS%201000%20All%20Gray_S63_OnLocation%20%2839%29-1170x780.jpg" alt="image9">
+    </div>
+    <div class="fifth-image">
+      <img src="https://www.brabus.com/_Resources/Persistent/3/5/a/7/35a7d754175a2189c913bf9d98e8fb24136cccbc/BRABUS%201000%20All%20Gray_S63_OnLocation%20%2841%29-1170x780.jpg" alt="image10">
+    </div>
+    <div class="fifth-image">
+      <img src="https://www.brabus.com/_Resources/Persistent/b/8/8/f/b88f53f2827246527a2a870675f437829d657f09/BRABUS%201000%20All%20Gray_S63_OnLocation%20%2834%29-1170x780.jpg" alt="image11">
+    </div>
+    <div class="fifth-image">
+      <img src="https://www.brabus.com/_Resources/Persistent/2/4/f/b/24fbb891bfe182e75f196129d3653828152e76c0/BRABUS%201000%20All%20Gray_S63_OnLocation%20%2824%29-1170x780.jpg" alt="image12">
+    </div>
+    <div class="fifth-image">
+      <img src="https://www.brabus.com/_Resources/Persistent/6/6/7/c/667c6eb004d68917bc71a59b14acce5a87928998/BRABUS%201000%20All%20Gray_AMG%20S%2063_Studio_klein%20%2818%29-1170x780.jpg" alt="image13">
+    </div>
+    <div class="fifth-image">
+      <img src="https://www.brabus.com/_Resources/Persistent/d/5/b/5/d5b5e306be0dc0542c8cb91fb9ed477eaedc3bae/BRABUS%201000%20All%20Gray_S63_OnLocation%20%2833%29-1170x780.jpg" alt="image14">
+    </div>
+
+
+    </div>
+    <button class="slider-arrow right-arrow">&#8250;</button> <!-- Right Arrow -->
+    <div class="fifth-text">
+      <h2>Interior. <span class="bold"> Masterpiece.</span></h2>
+      <p>Naturally, a fully specced BRABUS supercar also includes a tailor-made Masterpiece interior, designed and made by hand at the BRABUS upholstery shop. Matching the exterior color, the entire interior from the seat surfaces to the headliner features especially soft and breathable gray leather. Even all the piping and decorative seams are exactly tone-in-tone. All cockpit trim elements boast a finish in BRABUS “Shadow Gray”, setting further striking accents throughout the interior.<br><Br>
+
+        Like all BRABUS Masterpiece interior appointments, it is the precision with which all work was carried out that defines the "ALL GRAY" as well. This includes the quilting and perforation of the seat surfaces, center consoles and door panels in "Seashell Diamond" pattern design with embossed "Double-B” logos. The floors of the vehicle interior and the trunk are made from the finest leather and are adorned by the same pattern. The seat side bolsters as well as the inner sections of the door panels commemorate the founding of BRABUS in 1977 with the “Heritage” brand pattern featuring embossed “77” logos.<br><br>
+        
+        A selection of high-gloss sealed BRABUS Signature Carbon elements integrated into the dashboard, steering wheel, center console and door panels set further sporty accents inside the cabin. The interior is rounded off by a selection of additional custom features, such as the BRABUS carbon pedals and the BRABUS aluminum entry panels complete with an illuminated BRABUS logo, which changes color in tune with the ambient lighting.</p>
+    </div>
+  
+  </div>
+
+  <script>
+  document.addEventListener('DOMContentLoaded', () => {
+  // Select elements for the fifth-page slider
+  const fifthContainer = document.querySelector('.fifth-container');
+  const fifthImages = document.querySelectorAll('.fifth-image');
+  const leftArrowFifth = document.querySelector('.fifth-page .left-arrow');
+  const rightArrowFifth = document.querySelector('.fifth-page .right-arrow');
+  const fifthPage = document.querySelector('.fifth-page');
+  let fifthImageWidth = fifthImages[0]?.offsetWidth || 0; // Get the width of one image
+  let currentIndexFifth = fifthImages.length; // Start at the first original image after duplication
+  let autoScrollEnabled = true; // Flag to control auto-scroll
+
+  if (!fifthContainer || !fifthImages.length) {
+    console.error('Fifth container or images not found!');
+    return;
+  }
+
+  // Duplicate slider items for seamless looping
+  fifthImages.forEach((item) => {
+    const clone = item.cloneNode(true);
+    fifthContainer.appendChild(clone); // Append clones to the end
+  });
+  fifthImages.forEach((item) => {
+    const clone = item.cloneNode(true);
+    fifthContainer.insertBefore(clone, fifthContainer.firstChild); // Prepend clones to the beginning
+  });
+
+  // Adjust scroll position to the first original item
+  window.addEventListener('load', () => {
+    fifthImageWidth = fifthImages[0].offsetWidth; // Recalculate image width after loading
+    fifthContainer.scrollLeft = fifthImageWidth * currentIndexFifth; // Set initial scroll position
+  });
+
+  // Function to update the slider position
+  function updateFifthSliderPosition() {
+    fifthContainer.style.scrollBehavior = 'smooth';
+    fifthContainer.scrollLeft = currentIndexFifth * fifthImageWidth;
+  }
+
+  // Event listener for left arrow
+  leftArrowFifth?.addEventListener('click', () => {
+    currentIndexFifth--;
+    updateFifthSliderPosition();
+
+    // Reset position if at the first clone
+    fifthContainer.addEventListener('transitionend', () => {
+      if (currentIndexFifth < fifthImages.length) {
+        fifthContainer.style.scrollBehavior = 'auto'; // Disable smooth scrolling temporarily
+        currentIndexFifth = fifthImages.length * 2 - 1; // Jump to the last original image
+        fifthContainer.scrollLeft = currentIndexFifth * fifthImageWidth;
+      }
+    }, { once: true }); // Ensure the event listener runs only once
+  });
+
+  // Event listener for right arrow
+  rightArrowFifth?.addEventListener('click', () => {
+    currentIndexFifth++;
+    updateFifthSliderPosition();
+
+    // Reset position if at the last clone
+    fifthContainer.addEventListener('transitionend', () => {
+      if (currentIndexFifth >= fifthImages.length * 2) {
+        fifthContainer.style.scrollBehavior = 'auto'; // Disable smooth scrolling temporarily
+        currentIndexFifth = fifthImages.length; // Jump to the first original image
+        fifthContainer.scrollLeft = currentIndexFifth * fifthImageWidth;
+      }
+    }, { once: true }); // Ensure the event listener runs only once
+  });
+
+  // Auto-scroll functionality
+  function autoScroll() {
+    if (autoScrollEnabled) {
+      currentIndexFifth++;
+      updateFifthSliderPosition();
+
+      // Reset position if at the last clone
+      fifthContainer.addEventListener('transitionend', () => {
+        if (currentIndexFifth >= fifthImages.length * 2) {
+          fifthContainer.style.scrollBehavior = 'auto'; // Disable smooth scrolling temporarily
+          currentIndexFifth = fifthImages.length; // Jump to the first original image
+          fifthContainer.scrollLeft = currentIndexFifth * fifthImageWidth;
+        }
+      }, { once: true });
+    }
+  }
+
+  // Start auto-scroll every 3 seconds
+  const autoScrollInterval = setInterval(autoScroll, 3000);
+
+  // Stop auto-scroll when the section is in view
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        autoScrollEnabled = false; // Disable auto-scroll
+        clearInterval(autoScrollInterval); // Stop the interval
+      }
+    });
+  });
+
+  // Observe the fifth-page section
+  observer.observe(fifthPage);
+});
+  </script>
+
+  <footer class="footer">
+    <div class="region-language">
+      <strong>Current Region / Language</strong>
+      <p>et Ethiopia / English <a href="https://support.google.com/websearch/answer/3333234?hl=en&co=GENIE.Platform%3DAndroid">Change</a></p>
+    </div>
+
+    <div class="footer-top">
+      <div class="footer-column">
+            <h4>Prices</h4>
+            <p>Check your car price.</p>
+            <a href="../pages/check-prices.html">
+            <button>Check prices</button>
+          </a>
+          </div>
+      <div class="footer-column">
+        <h4>Locations & Contacts</h4>
+        <p>Do you have any questions?</p>
+        <a href="../pages/Contact.html">
+        <button>Get in touch</button>
+      </a>
+      </div>
+      <div class="footer-column">
+        <h4>Social Media</h4>
+        <p>Get in touch with us via social media.</p>
+        <div class="social-icons">
+          <a href="https://www.facebook.com"><i class="fab fa-facebook-f"></i></a>
+          <a href="https://www.instagram.com"><i class="fab fa-instagram"></i></a>
+          <a href="https://www.pinterest.com"><i class="fab fa-pinterest-p"></i></a>
+          <a href="https://www.youtube.com"><i class="fab fa-youtube"></i></a>
+          <a href="https://www.twitter.com"><i class="fab fa-x-twitter"></i></a>
+          <a href="https://www.linkedin.com"><i class="fab fa-linkedin-in"></i></a>
+        </div>
+      </div>
+    </div>
+
+
+  </footer>
+
+</body>
+</html>

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
+  <title>Check Car Price</title>
+
+  <!-- Internal CSS -->
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(to right, #1f1c2c, #928dab);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .card {
+      background: white;
+      padding: 2rem 3rem;
+      border-radius: 16px;
+      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+      text-align: center;
+      max-width: 400px;
+      width: 90%;
+    }
+
+    h1 {
+      color: #2c3e50;
+      margin-bottom: 1.5rem;
+      font-size: 1.8rem;
+      font-style: bold;
+    }
+
+    label {
+      font-size: 1.1rem;
+      color: #555;
+    }
+
+    select {
+      width: 100%;
+      margin-top: 0.5rem;
+      padding: 0.6rem;
+      font-size: 1rem;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      margin-bottom: 1rem;
+      transition: border 0.3s ease;
+    }
+
+    select:focus {
+      border-color: #6a82fb;
+      outline: none;
+    }
+
+    .price {
+      font-size: 1.3rem;
+      font-weight: bold;
+      color: #1f1c2c;
+      margin-top: 1rem;
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <h1>Check Car Price</h1>
+    <label for="carSelect">Choose a car:</label>
+    <select id="carSelect">
+      <option value="">Select a car</option>
+      <option value="Porsche 911">Porsche 911</option>
+      <option value="Mercedes G63">Mercedes G63</option>
+      <option value="Range Rover">Range Rover</option>
+      <option value="Rolls-Royce Cullinan">Rolls-Royce Cullinan</option>
+      <option value="Brabus AMG">Brabus AMG</option>
+      <option value="Macan Electric">Macan Electric</option>
+      <option value="Cayenne">Cayenne</option>
+      <option value="Panamera 4">Panamera 4</option>
+      <option value="718-Boxster">718-Boxster</option>
+    </select>
+
+    <p class="price" id="priceOutput"></p>
+  </div>
+
+  <script>
+    const prices = {
+      "Porsche 911": "11,000,000birr",
+      "Mercedes G63": "25,500,000birr",
+      "Range Rover": "18,000,000birr",
+      "Rolls-Royce Cullinan": "30,000,000birr",
+      "Macan Electric": "5,500,000birr",
+      "Cayenne": "7,000,000birr",
+      "Panamera 4": "6,000,000birr",
+      "718-Boxster": "13,000,000birr",
+      "Brabus AMG": "20,000,000birr"
+    };
+
+    const select = document.getElementById("carSelect");
+    const output = document.getElementById("priceOutput");
+
+    select.addEventListener("change", () => {
+      const selectedCar = select.value;
+      output.textContent = selectedCar ? `Price: ${prices[selectedCar]}` : "";
+    });
+  </script>
+</body>
+</html>
