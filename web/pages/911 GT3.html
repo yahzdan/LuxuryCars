@@ -1,0 +1,1074 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/406511b0ae.js" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&display=swap" rel="stylesheet">
+    <title>911-GT3</title>
+    <style>
+        *{
+          box-sizing: border-box;
+          margin: 0;
+          padding: 0;
+          
+        }
+        body {
+          margin: 0;
+          font-family: 'Helvetica Neue', sans-serif;
+          background: #fff;
+          text-align: center;
+          color: #000;
+        }
+
+        .first-page {
+          padding: 80px;
+          top: 300px;
+        }
+
+    
+        .hero-container {
+          position: relative;
+          width: 100%;
+          max-width: 1200px;
+          margin: 0 auto;
+          padding: 60px 0;
+          top: 40px;
+        }
+
+        .car-image {
+          position: relative;
+          width: 95%;
+          height: auto;
+          z-index: 2;
+        }
+
+        .bg-gradient{
+          display: block;
+          position: absolute;
+          width: 100%;
+          background-image: linear-gradient(rgb(255, 255, 255), rgba(221, 218, 218, 0.655));
+          height: 100px;
+          z-index: 1;
+          top: 86px;
+          height: 400px;
+        }
+
+        .macan-watermark {
+            position: relative;
+            width: 32%;
+            display: flex;
+            justify-content: center;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            top: -740px;
+            z-index: 1;
+        }
+    
+        .model-selector {
+          margin-top: 20px;
+        }
+    
+        .model-selector a {
+          margin: 0 10px;
+          text-decoration: none;
+          color: black;
+          font-weight: 500;
+          border-bottom: 2px solid transparent;
+        }
+    
+        .model-selector a.active {
+          border-bottom: 2px solid black;
+        }
+    
+        .title {
+          font-size: 60px;
+          margin: 20px 0 10px;
+          padding-top: 10px;
+        }
+    
+        .fuel-type {
+          background: #eee;
+          display: inline-block;
+          padding: 5px 10px;
+          border-radius: 5px;
+          font-size: 0.9rem;
+          margin-bottom: 10px;
+        }
+    
+        .price {
+          font-size: 1.2rem;
+          margin-bottom: 30px;
+          padding: 5px;
+        }
+    
+        .buttons {
+          display: flex;
+          justify-content: center;
+          gap: 20px;
+        }
+    
+        .buttons button {
+          padding: 15px 25px;
+          font-size: 1rem;
+          border: 1px solid #000;
+          background: #fff;
+          cursor: pointer;
+          transition: 0.3s;
+        }
+    
+        .buttons button:hover {
+          background: #000;
+          color: #fff;
+        }
+    
+        .buttons button.primary {
+          background: #000;
+          color: #fff;
+        }
+    
+        .buttons button.primary:hover {
+          background: #444;
+        }
+
+        .nav{
+          position: relative;
+            display: block;
+            width: 100%;
+            block-size: 83px;
+            background-color: #ffffff;
+
+            z-index: 5;
+        }
+        
+        .menu {
+            position: absolute;
+            top: 8px;
+            left: 75px;
+            display: flex;
+            justify-content: left;
+           }
+
+        .menu button {
+            position: relative;
+            display: inline-block;
+            color: #000;
+            font-size: 16px;
+            background-color: #fff;
+            cursor: pointer;
+            top: 20px;
+            border: none;
+            padding: 4px;
+            padding-left: 4px;
+        }
+
+        .menu a {
+            cursor: pointer;
+            text-decoration: none;
+        }
+
+        .menu button i{
+            margin-right: 5px;
+        }
+
+        .menu button:hover {
+            background-color: #e0e0e092;
+            transition: 0.2s;
+            border-radius: 6px;
+        }
+
+        .horizontal-line {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            height: 0.4px;
+            background-color: #d0cecec1;
+        }
+
+        .logo {
+            position: absolute;
+            top: 32px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            justify-content: center;
+            width: 18px;
+            height: 18px;
+        } 
+
+        /* Second Page */
+
+      .second-page {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 120px 120px;
+      gap: 10px;
+    }
+
+    .stats {
+      font-family: 'Inter', sans-serif;
+      display: flex;
+      flex-direction: column;
+      gap: 80px;
+      position: relative;
+      left: 60px;
+    }
+
+    .stat-block {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: all 1s ease-out;
+    }
+
+    .stat-block.animate {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .stat {
+      font-size: 4rem;
+    }
+
+    .label {
+      font-size: 1rem;
+      color: #555;
+    }
+
+    .image img {
+      width: 700px;
+      max-width: 100%;
+      transform: rotateY(15deg);
+    }
+
+    .btn {
+      padding: 10px 20px;
+      font-size: 1rem;
+      margin-top: 40px;
+      border: 1px solid #000;
+      background: none;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    .btn:hover {
+      background: #000;
+      color: #fff;
+    }
+
+    /* HighLights Section */
+
+    .img-show {
+      position: relative;
+
+    }
+
+    .img-show h2 {
+      font-size: 60px;
+      margin: 20px 0;
+      padding:0 0 30px ;
+      font-weight: 700;
+    }
+    
+    .full-width-img img {
+      width: 80%;
+      height: 90%;
+      border-radius: 15px;
+      z-index: 1;
+  }
+
+    .img-text{
+      position: absolute;
+      z-index: 2;
+      padding-top: 130px;
+      left: 250px;
+      text-align: left;
+
+    }
+
+    .img-text h1{
+      font-weight: 200;
+      font-size: 70px;
+
+    }
+
+    .img-text p{
+      padding-top: 20px;
+      line-height: 30px;
+      font-size: 20px;
+      font-weight: 50;
+
+    }
+
+    .portrait-width-img{
+      z-index: 3;
+      display: flex;
+      right: 10px;
+      justify-content: right;
+    }
+
+    .portrait-width-img img{
+      width: 38%;
+      border-radius: 15px;
+      position: relative;
+      right: 100px;
+      top: -250px;
+      z-index: 3;
+
+
+      opacity: 1;
+    transform: translateY(250px);
+    animation: fadeInUp;
+    animation-timing-function: ease-in-out;
+    animation-delay: 5s; 
+    animation-fill-mode: forwards;
+    animation-timeline: view();
+    animation-range: 0 ;
+    
+  }
+  
+  @keyframes fadeInUp {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  .last-img{
+    position: relative;
+    
+  }
+
+  .last-img img{
+    position: relative;
+    width: 45%;
+    height: 550px;
+    top: -415px;
+    margin-left: -100px;
+    border-radius: 15px;
+    z-index: 2;
+
+    opacity: 1;
+    transform: translateY(250px);
+    animation: lastImgFadeInUp;
+    animation-timing-function: ease-in-out;
+    animation-delay: 5s; 
+    animation-fill-mode: forwards;
+    animation-timeline: view();
+    animation-range: 0 ;
+    
+  }
+  
+  @keyframes lastImgFadeInUp {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  .highlights {
+    position: relative;
+    top: -300px;
+  }
+
+  .highlights h1{
+    font-size: 60px;
+    text-align: center;
+    padding-bottom: 70px;
+    padding-top: 250px;
+    font-weight: 300;
+  }
+
+  .highlight-clip{
+    width: 80%;
+    border-radius: 15px;
+  }
+
+  /* Footer */
+
+  .footer {
+      position: relative;
+      background-color: #000000;
+      color: #fff;
+      padding: 40px 20px;
+      block-size: 600px;
+      font-size: 18px;
+      text-align: left;
+    }
+
+    .region-language {
+      margin-bottom: 30px;
+      padding: 30px;
+    }
+
+    .region-language strong {
+      display: block;
+      font-size: 1.1em;
+      margin-bottom: 5px;
+    }
+
+    .region-language a {
+      color: #fff;
+      text-decoration: underline;
+      margin-left: 10px;
+      font-size: 0.95em;
+    }
+
+    .footer-top,
+    .footer-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 40px;
+      margin: 20px 0;
+      padding: 30px;
+    }
+
+    .footer-column {
+      flex: 1;
+      min-width: 250px;
+    }
+
+    .footer-column h4 {
+      font-size: 1.1em;
+      margin-bottom: 8px;
+    }
+
+    .footer-column p {
+      font-size: 0.95em;
+      margin-bottom: 10px;
+    }
+
+    .footer-column button {
+      background-color: #fff;
+      color: #000;
+      padding: 20px 32px;
+      border: none;
+      font-weight: bold;
+      cursor: pointer;
+      border-radius: 4px;
+      width: 300px;
+    }
+
+    .social-icons {
+      display: flex;
+      gap: 10px;
+      margin-top: 10px;
+    }
+
+    .social-icons a {
+      background-color: #fff;
+      color: #000;
+      width: 40px;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 4px;
+      font-size: 1.2em;
+      text-decoration: none;
+    }
+
+    .footer-links > div {
+      flex: 1;
+      min-width: 200px;
+    }
+
+    .footer-links p {
+      font-size: 0.95em;
+      margin: 6px 0;
+    }
+
+    .footer-bottom {
+      margin-top: 30px;
+      font-size: 0.8em;
+      color: #ccc;
+      line-height: 1.6;
+    }
+
+    .footer-bottom a {
+      color: #ccc;
+      text-decoration: underline;
+      margin-right: 8px;
+    }
+
+    /* Responsive Tweak */
+    @media (max-width: 768px) {
+      .footer-top, .footer-links {
+        flex-direction: column;
+      }
+    }
+   
+    .footer-logo img{
+      width: 300px;
+      height: 190px;
+      position: absolute;
+      top: 90%;
+      left: 50%;
+      transform: translate(-50%, -90%);
+    }
+
+    .logo-911{
+        position: relative;
+        padding: 50px;
+        width: 20%;
+    }
+
+    /* Side Menu */
+
+#menuOverlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+    z-index: 1000;
+}
+
+#menuOverlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+
+
+#sideMenu.active {
+    left: 0;
+}
+
+#sideMenu button#closeMenuBtn {
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    margin-bottom: 20px;
+}
+
+#sideMenu ul {
+    list-style: none;
+    padding: 0;
+    text-align: left;
+}
+
+#sideMenu ul li {
+    margin: 15px 0;
+    padding: 15px;
+}
+
+#sideMenu ul li a {
+    text-decoration: none;
+    color: #000;
+    font-size: 1.5rem;
+    transition: color 0.2s;
+}
+
+#sideMenu ul li a:hover {
+    color: #b80000;
+}
+
+#menuOverlay {
+            position: fixed;
+            top: 0; 
+            left: 0;
+            width: 100vw; 
+            height: 100vh;
+            background: rgba(0,0,0,0.5);
+            opacity: 0; 
+            visibility: hidden;
+            transition: opacity 0.3s;
+            z-index: 2000;
+            backdrop-filter: blur(4px);
+        }
+        #menuOverlay.active {
+            opacity: 1; visibility: visible;
+        }
+
+        #sideMenu {
+            position: fixed;
+            top: 0; 
+            left: -490px;
+            width: 490px; 
+            height: 100vh;
+            background: #fff;
+            box-shadow: 2px 0 20px rgba(0,0,0,0.15);
+            z-index: 2001;
+            transition: left 0.4s cubic-bezier(.77,0,.18,1);
+            padding: 40px 30px 30px 30px;
+            display: flex;
+            flex-direction: column;
+            overflow-y: auto;
+        }
+        #sideMenu.active {
+            left: 0;
+        }
+        #sideMenu button#closeMenuBtn {
+            background: none;
+            border: none;
+            font-size: 2rem;
+            align-self: flex-end;
+            cursor: pointer;
+            margin-bottom: 30px;
+        }
+        #sideMenu ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        #sideMenu ul li {
+            margin-bottom: 24px;
+        }
+        #sideMenu ul li a {
+            text-decoration: none;
+            color: #111;
+            font-size: 1.5rem;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+        #sideMenu ul li a:hover {
+            color: #b80000;
+        }
+
+        /* Blur background content when menu is open */
+        .blurred-bg {
+            filter: blur(4px);
+            pointer-events: none;
+            user-select: none;
+        }
+        .no-scroll {
+            overflow: hidden;
+        }
+
+        @media (max-width: 500px) {
+            #sideMenu { width: 90vw; min-width: 0; }
+        }
+
+        /* Dropdown styles */
+#sideMenu ul .dropdown {
+    display: none;
+    list-style: none;
+    padding-left: 20px;
+    margin-top: 10px;
+}
+
+#sideMenu ul .dropdown li {
+    margin-bottom: 10px;
+}
+
+#sideMenu ul .dropdown li a {
+    font-size: 1rem;
+    color: #555;
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+#sideMenu ul .dropdown li a:hover {
+    color: #b80000;
+}
+
+/* Add a class to show the dropdown */
+#sideMenu ul li.open .dropdown {
+    display: block;
+}
+
+/* Animation for dropdown */
+
+#sideMenu ul .dropdown {
+    display: none;
+    list-style: none;
+    padding-left: 20px;
+    margin-top: 10px;
+    opacity: 0;
+    transform: translateY(-10px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+#sideMenu ul li.open .dropdown {
+    display: block;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.dropdown li {
+  position: relative;
+  background-color: #dadada9d;
+  border-radius: 15px;
+  height: 200px;
+}
+
+.dropdown li:hover {
+  background-color: #e0e0e0;
+}
+
+.dropdown a img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 370px;
+  background-size: cover;
+}
+
+.dropdown a{
+  font-size: 1.9rem;
+}
+
+.model-info {
+
+}
+
+.model-info h3 {
+  font-size: 1.2rem;
+  margin: 0;
+  color: #000000;
+}
+
+.model-info .fuel-type {
+  position: relative;
+  font-size: 0.9rem;
+  color: #343434;
+  background: #eee;
+  padding: 3px 8px;
+  border-radius: 5px;
+  margin-top: 5px;
+  bottom: -120px;
+}
+
+
+    </style>
+    </head>
+    <body>
+        <header>
+            <div class="nav">
+                <div class="menu">
+                <a href="#">
+                    <button><i class="fa-solid fa-bars"></i>Menu</button>
+                </a>
+                </div>
+                <div class="horizontal-line"></div>
+  
+                <div class="logo">
+                  <img src="https://upload.wikimedia.org/wikipedia/commons/c/cc/Porsche_wordmark.png" alt="Porsche Logo">
+               </div>
+  
+            </div>
+
+            <div id="menuOverlay"></div>
+            <div id="sideMenu">
+              <button id="closeMenuBtn">&times;</button>
+              <ul>
+                <li>
+                  <a href="#" class="dropdown-toggle">Models</a>
+                  <ul class="dropdown">
+                    <li>
+                      <a href="../pages/718-Boxster.html">
+                        <img src="https://nav.porsche.com/00BC524/series-assets/all/718@2x.webp" alt="718">
+                        <div class="model-info">
+                          <h3>718</h3>
+                          <span class="fuel-type">Gasoline</span>
+                        </div>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="../pages/911 GT3.html">
+                        <img src="https://nav.porsche.com/00BC524/series-assets/all/911@2x.webp" alt="911">
+                        <div class="model-info">
+                          <h3>911</h3>
+                          <span class="fuel-type">Gasoline</span>
+                        </div>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="../pages/911 Carrera T.html">
+                        <img src="https://nav.porsche.com/00BC524/series-assets/all/taycan@2x.webp" alt="Taycan">
+                        <div class="model-info">
+                          <h3>Taycan</h3>
+                          <span class="fuel-type">Electric</span>
+                        </div>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="../pages/Panamera 4.html">
+                        <img src="https://nav.porsche.com/00BC524/series-assets/all/panamera@2x.webp" alt="Panamera">
+                        <div class="model-info">
+                          <h3>Panamera</h3>
+                          <span class="fuel-type">Gasoline</span>
+                        </div>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="../pages/The Macan.html">
+                        <img src="https://nav.porsche.com/00BC524/series-assets/all/macan@2x.webp" alt="Macan">
+                        <div class="model-info">
+                          <h3>Macan</h3>
+                          <span class="fuel-type">Electric</span>
+                        </div>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="../pages/Cayenne.html">
+                        <img src="https://nav.porsche.com/00BC524/series-assets/all/cayenne@2x.webp" alt="Cayenne">
+                        <div class="model-info">
+                          <h3>Cayenne</h3>
+                          <span class="fuel-type">Gasoline</span>
+                          <span class="fuel-type">Electric</span>
+                        </div>
+                      </a>
+                    </li>
+                  </ul>
+              </li>
+                  <li><a href="#">Shopping Tools</a></li>
+                  <li><a href="#">Porsche Shop</a></li>
+                  <li><a href="#">Services</a></li>
+                  <li><a href="#">Experience</a></li>
+                  <li><a href="#">Find Your Porsche Center</a></li>
+                  <li><a href="#">My Porsche</a></li>
+              </ul>
+          </div>
+
+            <script>
+document.addEventListener('DOMContentLoaded', () => {
+    const menuButton = document.querySelector('.menu button');
+    const menuOverlay = document.getElementById('menuOverlay');
+    const sideMenu = document.getElementById('sideMenu');
+    const closeMenuBtn = document.getElementById('closeMenuBtn');
+
+    menuButton.addEventListener('click', () => {
+        sideMenu.classList.add('active');
+        menuOverlay.classList.add('active');
+    });
+
+    closeMenuBtn.addEventListener('click', () => {
+        sideMenu.classList.remove('active');
+        menuOverlay.classList.remove('active');
+    });
+
+    menuOverlay.addEventListener('click', () => {
+        sideMenu.classList.remove('active');
+        menuOverlay.classList.remove('active');
+    });
+});
+
+document.addEventListener('DOMContentLoaded', () => {
+    const dropdownToggles = document.querySelectorAll('.dropdown-toggle');
+
+    dropdownToggles.forEach(toggle => {
+        toggle.addEventListener('click', (e) => {
+            e.preventDefault(); // Prevent default link behavior
+            const parentLi = toggle.parentElement;
+
+            // Toggle the 'open' class on the parent <li>
+            parentLi.classList.toggle('open');
+        });
+    });
+});
+</script>
+
+        </header>
+        <div class="first-page">
+      <div class="hero-container">
+  
+        <img src="https://images-porsche.imgix.net/-/media/1DBDC37E82084CF496EE48FCCE48BE0A_4D115F6379CF4C299F1F38641CE865F0_911-gt3-side?w=2560&h=697&q=85&crop=faces%2Centropy%2Cedges&auto=format" width="2560" height="697"
+        srcset="https://images-porsche.imgix.net/-/media/1DBDC37E82084CF496EE48FCCE48BE0A_4D115F6379CF4C299F1F38641CE865F0_911-gt3-side?w=300&q=85&crop=faces%2Centropy%2Cedges&auto=format 300w,
+        https://images-porsche.imgix.net/-/media/1DBDC37E82084CF496EE48FCCE48BE0A_4D115F6379CF4C299F1F38641CE865F0_911-gt3-side?w=600&q=85&crop=faces%2Centropy%2Cedges&auto=format 600w,
+        https://images-porsche.imgix.net/-/media/1DBDC37E82084CF496EE48FCCE48BE0A_4D115F6379CF4C299F1F38641CE865F0_911-gt3-side?w=900&q=85&crop=faces%2Centropy%2Cedges&auto=format 900w,
+        https://images-porsche.imgix.net/-/media/1DBDC37E82084CF496EE48FCCE48BE0A_4D115F6379CF4C299F1F38641CE865F0_911-gt3-side?w=1200&q=85&crop=faces%2Centropy%2Cedges&auto=format 1200w,
+        https://images-porsche.imgix.net/-/media/1DBDC37E82084CF496EE48FCCE48BE0A_4D115F6379CF4C299F1F38641CE865F0_911-gt3-side?w=1400&q=85&crop=faces%2Centropy%2Cedges&auto=format 1400w" sizes="(min-width: 1920px) 1311px,(min-width: 760px) 70vw,85vw" alt="Porsche Macan Turbo" class="car-image">
+       
+      </div>
+    
+      <div class="model-selector">
+        <a href="#">Coupé</a>
+        <a href="#">Cabriolet</a>
+        <a href="#">Targa</a>
+        <a href="#">Turbo Coupe</a>
+        <a href="#">Turbo Cabriolet</a>
+        <a href="#" class="active">GT</a>
+      </div>
+    
+      <div class="title">911 GT3</div>
+      <div class="fuel-type">Gasoline</div>
+      <div class="price">From $ 222,500<sup>1</sup></div>
+    
+      <div class="buttons">
+        <button class="primary">Change model</button>
+        <button>Build Your Porsche</button>
+        <button>New and Used Inventory</button>
+      </div>
+    </div>
+  
+    <div class="bg-gradient"></div>
+    <div class="macan-watermark">
+      <img src="https://cdn.ui.porsche.com/porsche-design-system/model-signatures/911.b68f913.svg" alt="Porsche Macan Watermark">
+    </div>
+  
+    <!--Top-Speed-->
+  
+    <div class="second-page">
+      <div class="stats">
+        <div class="stat-block" id="accel-block">
+          <div class="stat" id="accel">0.0s</div>
+          <div class="label">0 - 60 mph with launch control</div>
+        </div>
+        <div class="stat-block" id="speed-block">
+          <div class="stat" id="topSpeed">0 mph</div>
+          <div class="label">Top track speed (with summer tires)</div>
+        </div>
+        <button class="btn">Technical Specs</button>
+      </div>
+      <div class="image">
+        <img src="https://images-porsche.imgix.net/-/media/B4BFF75D24F94B959F189CF96230348A_A433A79337964421B54DB1AF72E6DD43_CZ25W18IX0011-911-gt3-rear-view?w=999&q=85&auto=format" alt="Porsche Macan Turbo">
+      </div>
+    </div>
+  
+    <script>
+      function animateValue(id, start, end, duration, isDecimal = false, suffix = '') {
+        const obj = document.getElementById(id);
+        let startTimestamp = null;
+  
+        const step = (timestamp) => {
+          if (!startTimestamp) startTimestamp = timestamp;
+          const progress = Math.min((timestamp - startTimestamp) / duration, 1);
+          const value = start + progress * (end - start);
+          obj.textContent = isDecimal ? value.toFixed(1) + suffix : Math.floor(value) + suffix;
+          if (progress < 1) {
+            window.requestAnimationFrame(step);
+          }
+        };
+  
+        window.requestAnimationFrame(step);
+      }
+  
+      function handleScrollAnimation() {
+        const accelBlock = document.getElementById('accel-block');
+        const speedBlock = document.getElementById('speed-block');
+        const accelStat = document.getElementById('accel');
+        const speedStat = document.getElementById('topSpeed');
+  
+        const accelPosition = accelBlock.getBoundingClientRect().top;
+        const screenPosition = window.innerHeight;
+  
+        if (accelPosition < screenPosition - 100 && !accelBlock.classList.contains('animate')) {
+          accelBlock.classList.add('animate');
+          speedBlock.classList.add('animate');
+  
+          animateValue('accel', 0, 3.2, 2000, true, 's');
+          animateValue('topSpeed', 0, 193, 2000, false, ' mph');
+        }
+      }
+  
+      window.addEventListener('scroll', handleScrollAnimation);
+      window.addEventListener('load', handleScrollAnimation);
+    </script>
+  
+    <!-- Highlights -->
+  
+    <div class="img-show">
+      <img src="https://cdn.ui.porsche.com/porsche-design-system/model-signatures/911.b68f913.svg" class="logo-911">
+  
+      <div class="full-width-img">
+        <img src="https://images-porsche.imgix.net/-/media/0B3F90A75B0141FF8BED694C3C1A323B_7C02423B08CB49C8801E208B2D16A51E_CZ25W18OX0004-911-gt3-white-side?w=2560&h=1440&q=85&crop=faces%2Centropy%2Cedges&auto=format" width="2560" height="1440"
+          srcset="https://images-porsche.imgix.net/-/media/0B3F90A75B0141FF8BED694C3C1A323B_7C02423B08CB49C8801E208B2D16A51E_CZ25W18OX0004-911-gt3-white-side?w=300&q=85&crop=faces%2Centropy%2Cedges&auto=format 300w,
+          https://images-porsche.imgix.net/-/media/0B3F90A75B0141FF8BED694C3C1A323B_7C02423B08CB49C8801E208B2D16A51E_CZ25W18OX0004-911-gt3-white-side?w=600&q=85&crop=faces%2Centropy%2Cedges&auto=format 600w,
+          https://images-porsche.imgix.net/-/media/0B3F90A75B0141FF8BED694C3C1A323B_7C02423B08CB49C8801E208B2D16A51E_CZ25W18OX0004-911-gt3-white-side?w=900&q=85&crop=faces%2Centropy%2Cedges&auto=format 900w,
+          https://images-porsche.imgix.net/-/media/0B3F90A75B0141FF8BED694C3C1A323B_7C02423B08CB49C8801E208B2D16A51E_CZ25W18OX0004-911-gt3-white-side?w=1200&q=85&crop=faces%2Centropy%2Cedges&auto=format 1200w,
+          https://images-porsche.imgix.net/-/media/0B3F90A75B0141FF8BED694C3C1A323B_7C02423B08CB49C8801E208B2D16A51E_CZ25W18OX0004-911-gt3-white-side?w=1500&q=85&crop=faces%2Centropy%2Cedges&auto=format 1500w,
+          https://images-porsche.imgix.net/-/media/0B3F90A75B0141FF8BED694C3C1A323B_7C02423B08CB49C8801E208B2D16A51E_CZ25W18OX0004-911-gt3-white-side?w=1800&q=85&crop=faces%2Centropy%2Cedges&auto=format 1800w,
+          https://images-porsche.imgix.net/-/media/0B3F90A75B0141FF8BED694C3C1A323B_7C02423B08CB49C8801E208B2D16A51E_CZ25W18OX0004-911-gt3-white-side?w=2100&q=85&crop=faces%2Centropy%2Cedges&auto=format 2100w,
+          https://images-porsche.imgix.net/-/media/0B3F90A75B0141FF8BED694C3C1A323B_7C02423B08CB49C8801E208B2D16A51E_CZ25W18OX0004-911-gt3-white-side?w=2400&q=85&crop=faces%2Centropy%2Cedges&auto=format 2400w,
+          https://images-porsche.imgix.net/-/media/0B3F90A75B0141FF8BED694C3C1A323B_7C02423B08CB49C8801E208B2D16A51E_CZ25W18OX0004-911-gt3-white-side?w=2560&q=85&crop=faces%2Centropy%2Cedges&auto=format 2560w" sizes="(min-width: 1920px) 1442px,(min-width: 480px) 90vw,95vw">
+      </div>
+  
+      <div class="portrait-width-img">
+        <img src="https://images-porsche.imgix.net/-/media/6B40E90F01E74657A4F4827FC7A7959F_E6F748D71779489DA12FBF73E9002145_CZ25W18OX0002-911-gt3-white-rear?w=1496&h=1986&q=85&crop=faces%2Centropy%2Cedges&auto=format"
+        srcset="https://images-porsche.imgix.net/-/media/6B40E90F01E74657A4F4827FC7A7959F_E6F748D71779489DA12FBF73E9002145_CZ25W18OX0002-911-gt3-white-rear?w=300&q=85&crop=faces%2Centropy%2Cedges&auto=format 300w,
+        https://images-porsche.imgix.net/-/media/6B40E90F01E74657A4F4827FC7A7959F_E6F748D71779489DA12FBF73E9002145_CZ25W18OX0002-911-gt3-white-rear?w=600&q=85&crop=faces%2Centropy%2Cedges&auto=format 600w,
+        https://images-porsche.imgix.net/-/media/6B40E90F01E74657A4F4827FC7A7959F_E6F748D71779489DA12FBF73E9002145_CZ25W18OX0002-911-gt3-white-rear?w=900&q=85&crop=faces%2Centropy%2Cedges&auto=format 900w,
+        https://images-porsche.imgix.net/-/media/6B40E90F01E74657A4F4827FC7A7959F_E6F748D71779489DA12FBF73E9002145_CZ25W18OX0002-911-gt3-white-rear?w=1200&q=85&crop=faces%2Centropy%2Cedges&auto=format 1200w,
+        https://images-porsche.imgix.net/-/media/6B40E90F01E74657A4F4827FC7A7959F_E6F748D71779489DA12FBF73E9002145_CZ25W18OX0002-911-gt3-white-rear?w=1500&q=85&crop=faces%2Centropy%2Cedges&auto=format 1500w,
+        https://images-porsche.imgix.net/-/media/6B40E90F01E74657A4F4827FC7A7959F_E6F748D71779489DA12FBF73E9002145_CZ25W18OX0002-911-gt3-white-rear?w=1800&q=85&crop=faces%2Centropy%2Cedges&auto=format 1800w,
+        https://images-porsche.imgix.net/-/media/6B40E90F01E74657A4F4827FC7A7959F_E6F748D71779489DA12FBF73E9002145_CZ25W18OX0002-911-gt3-white-rear?w=2100&q=85&crop=faces%2Centropy%2Cedges&auto=format 2100w,
+        https://images-porsche.imgix.net/-/media/6B40E90F01E74657A4F4827FC7A7959F_E6F748D71779489DA12FBF73E9002145_CZ25W18OX0002-911-gt3-white-rear?w=2400&q=85&crop=faces%2Centropy%2Cedges&auto=format 2400w,
+        https://images-porsche.imgix.net/-/media/6B40E90F01E74657A4F4827FC7A7959F_E6F748D71779489DA12FBF73E9002145_CZ25W18OX0002-911-gt3-white-rear?w=2560&q=85&crop=faces%2Centropy%2Cedges&auto=format 2560w">
+        <div class="img-text">
+          <h1>The one and <br>always.</h1>
+          <br>
+          <p>For almost 25 years the 911 GT3 has accepted only<br> the limits of physics — and left the ordinary far behind.<br> Motorsport-tested design and maximum performance<br>ensure it unwaveringly bridges the boundary between <br>the racetrack and the road.
+          </p>
+        </div>
+  
+      </div>
+      
+      <div class="last-img">
+        <img src="https://images-porsche.imgix.net/-/media/04A00A110697442F84092F6E6ACF05CD_77AF125DD84E48C7B950A7ECBD75DEB5_CZ25W18OX0003-911-gt3-white-front?w=1720&h=1232&q=85&crop=faces%2Centropy%2Cedges&auto=format"
+        srcset="https://images-porsche.imgix.net/-/media/04A00A110697442F84092F6E6ACF05CD_77AF125DD84E48C7B950A7ECBD75DEB5_CZ25W18OX0003-911-gt3-white-front?w=300&q=85&crop=faces%2Centropy%2Cedges&auto=format 300w,
+        https://images-porsche.imgix.net/-/media/04A00A110697442F84092F6E6ACF05CD_77AF125DD84E48C7B950A7ECBD75DEB5_CZ25W18OX0003-911-gt3-white-front?w=600&q=85&crop=faces%2Centropy%2Cedges&auto=format 600w,
+        https://images-porsche.imgix.net/-/media/04A00A110697442F84092F6E6ACF05CD_77AF125DD84E48C7B950A7ECBD75DEB5_CZ25W18OX0003-911-gt3-white-front?w=900&q=85&crop=faces%2Centropy%2Cedges&auto=format 900w,
+        https://images-porsche.imgix.net/-/media/04A00A110697442F84092F6E6ACF05CD_77AF125DD84E48C7B950A7ECBD75DEB5_CZ25W18OX0003-911-gt3-white-front?w=1200&q=85&crop=faces%2Centropy%2Cedges&auto=format 1200w,
+        https://images-porsche.imgix.net/-/media/04A00A110697442F84092F6E6ACF05CD_77AF125DD84E48C7B950A7ECBD75DEB5_CZ25W18OX0003-911-gt3-white-front?w=1500&q=85&crop=faces%2Centropy%2Cedges&auto=format 1500w,
+        https://images-porsche.imgix.net/-/media/04A00A110697442F84092F6E6ACF05CD_77AF125DD84E48C7B950A7ECBD75DEB5_CZ25W18OX0003-911-gt3-white-front?w=1800&q=85&crop=faces%2Centropy%2Cedges&auto=format 1800w,
+        https://images-porsche.imgix.net/-/media/04A00A110697442F84092F6E6ACF05CD_77AF125DD84E48C7B950A7ECBD75DEB5_CZ25W18OX0003-911-gt3-white-front?w=2100&q=85&crop=faces%2Centropy%2Cedges&auto=format 2100w,
+        https://images-porsche.imgix.net/-/media/04A00A110697442F84092F6E6ACF05CD_77AF125DD84E48C7B950A7ECBD75DEB5_CZ25W18OX0003-911-gt3-white-front?w=2400&q=85&crop=faces%2Centropy%2Cedges&auto=format 2400w,
+        https://images-porsche.imgix.net/-/media/04A00A110697442F84092F6E6ACF05CD_77AF125DD84E48C7B950A7ECBD75DEB5_CZ25W18OX0003-911-gt3-white-front?w=2560&q=85&crop=faces%2Centropy%2Cedges&auto=format 2560w">
+      </div>
+  
+    </div>
+  
+    <div class="highlights">
+      <h1>Highlights.</h1>
+      <div class="video">
+        <video autoplay loop muted plays-inline class="highlight-clip">
+          <source src="../videos/911 GT3.mp4" type="video/mp4">
+      </video>
+      </div>
+    </div>
+  
+    <!-- Footer Section -->
+  
+    <footer class="footer">
+    <div class="region-language">
+      <strong>Current Region / Language</strong>
+      <p>et Ethiopia / English <a href="https://support.google.com/websearch/answer/3333234?hl=en&co=GENIE.Platform%3DAndroid">Change</a></p>
+    </div>
+
+    <div class="footer-top">
+      <div class="footer-column">
+            <h4>Prices</h4>
+            <p>Check your car price.</p>
+            <a href="../pages/check-prices.html">
+            <button>Check prices</button>
+          </a>
+          </div>
+      <div class="footer-column">
+        <h4>Locations & Contacts</h4>
+        <p>Do you have any questions?</p>
+        <a href="../pages/Contact.html">
+        <button>Get in touch</button>
+      </a>
+      </div>
+      <div class="footer-column">
+        <h4>Social Media</h4>
+        <p>Get in touch with us via social media.</p>
+        <div class="social-icons">
+          <a href="https://www.facebook.com"><i class="fab fa-facebook-f"></i></a>
+          <a href="https://www.instagram.com"><i class="fab fa-instagram"></i></a>
+          <a href="https://www.pinterest.com"><i class="fab fa-pinterest-p"></i></a>
+          <a href="https://www.youtube.com"><i class="fab fa-youtube"></i></a>
+          <a href="https://www.twitter.com"><i class="fab fa-x-twitter"></i></a>
+          <a href="https://www.linkedin.com"><i class="fab fa-linkedin-in"></i></a>
+        </div>
+      </div>
+    </div>
+  
+      <div class="footer-logo">
+        <img src="https://static.vecteezy.com/system/resources/previews/020/498/724/non_2x/porsche-logo-brand-car-symbol-name-white-design-german-automobile-illustration-with-black-background-free-vector.jpg" alt="Porsche Logo">
+     </div>
+  
+    </footer>
+  
+  
+    </div>
+    </body>
+    </html>

@@ -1,0 +1,817 @@
+<!DOCTYPE html>
+<html lang="en" style="--vh: 8.18px;">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
+    <script src="https://kit.fontawesome.com/406511b0ae.js" crossorigin="anonymous"></script>
+    <title>Mercedes-AMG G 63</title>
+    <style>
+              * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f0f0f0;
+            color: #333;
+        }
+
+        .first-page {
+            position: relative;
+        }
+
+        .bg-video .bg-clip{
+            position: relative;
+            top: 0;
+            left: 0;
+            width: 100%;
+        }
+
+        /* Second Page Styling */
+
+        .second-page {
+        text-align: center;
+        padding: 160px;
+        background-color: #fff;
+        padding: 0;
+        }
+
+        .second-page .text h1 {
+        font-size: 2rem;
+        font-weight: bold;
+        margin-bottom: 30px;
+        }
+
+        .second-page .text p {
+        font-size: 1rem;
+        color: #666;
+        margin-bottom: 150px;
+        line-height: 1.5;
+        }
+
+        .second-page .text {
+            padding-top: 120px;
+        }
+
+        /* Performance Metrics Section */
+
+        .performance-metrics {
+        display: flex;
+        justify-content: space-around;
+        background-color: #f9f9f9;
+        padding: 100px 0;
+        border-top: 1px solid #ddd;
+        border-bottom: 1px solid #ddd;
+        width: 100%; /* Full width of the viewport */
+        margin: 0; /* Remove any default margins */
+        box-sizing: border-box;
+        }
+
+        .metric {
+        text-align: center;
+        color: #333;
+        }
+
+        .metric h2 {
+        position: relative;
+        top: 30px;
+        font-size: 6rem;
+        color: #b00000;
+        margin: 0;
+        font-weight: lighter;
+        }
+
+        .metric p {
+        position: relative;
+        top: -130px;
+        font-size: 1rem;
+        font-weight: bold;
+        margin: 5px 0;
+        text-transform: uppercase;
+        }
+
+        .metric span {
+        font-size: 0.9rem;
+        color: #888;
+        }
+
+        /* Third Page */
+
+        .third-page {
+            text-align: left;
+            padding: 100px 0;
+            padding-left: 200px;
+            background-color: #fff;
+            border-top: 1px solid #ddd;
+        }
+
+        .third-page h2 {
+            font-size: 2.5rem;
+            font-weight: lighter;
+            color: #333;
+            margin-bottom: 110px;
+        }
+
+        .third-page p {
+            font-size: 1.2rem;
+            color: #666;
+            line-height: 1.5;
+            margin-top: 20px;
+            text-align: left;
+            font-weight: lighter;
+        }
+
+/* Slider Container */
+
+.image-slider {
+  position: relative;
+}
+
+.slider-container {
+  display: flex;
+  flex-direction: row;
+  overflow-x: hidden;
+  background-color: #fff;
+  scroll-behavior: smooth;
+}
+
+.slider-item {
+  padding: 0 17px 0 0;
+}
+
+/* Navigation Arrows */
+
+.slider-arrow {
+  position: absolute;
+  top: 49%;
+  transform: translateY(-50%);
+  background-color: transparent;
+  border: none;
+  color: white;
+  font-size: 5rem;
+  cursor: pointer;
+  z-index: 10;
+  padding: 15px;
+  transition: color 0.1s ease;
+}
+
+.left-arrow {
+  left: 10px;
+}
+
+.right-arrow {
+  right: 10px;
+}
+
+.slider-arrow:hover {
+  color: rgb(179, 179, 179);
+}
+
+/* Responsive Design */
+
+@media (max-width: 768px) {
+  .image-slider {
+    width: 95%; /* Adjust width for smaller screens */
+  }
+
+  .slider-item img {
+    max-height: 400px; /* Adjust height for smaller screens */
+  }
+
+  .slider-arrow {
+    font-size: 1.5rem;
+    padding: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .slider-item img {
+    max-height: 300px; /* Adjust height for very small screens */
+  }
+
+  .slider-arrow {
+    font-size: 1.2rem;
+    padding: 8px;
+  }
+}
+
+/* Fourth Page */
+
+.fourth-page {
+  position: relative;
+
+}
+
+.full-card img {
+  width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+  padding: 0 0 0 0;
+}
+
+
+.nav-button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  font-size: 1rem;
+  z-index: 10;
+}
+
+.prev-button {
+  left: 10px;
+}
+
+.next-button {
+  right: 10px;
+}
+
+.full-card {
+  display: none;
+}
+
+.full-card.active {
+  display: block; 
+}
+
+/* Fifth Page */
+
+.fifth-page {
+  position: relative;
+  background-color: #fff;
+}
+
+.fifth-container {
+  display: flex;
+  flex-direction: row;
+  overflow-x: hidden;
+  background-color: #fff;
+  scroll-behavior: smooth;
+}
+
+.fifth-image {
+  padding: 0 15px 0 0;
+}
+
+.fifth-text {
+  font-family: 'poppins', sans-serif;
+  padding: 100px;
+}
+
+.fifth-text h2 {
+  font-size: 2.5rem;
+  font-weight: lighter;
+  color: #333;
+}
+
+.fifth-text .bold {
+  font-weight: bold;  
+}
+
+.fifth-text p {
+  font-size: 1.2rem;
+  color: #666;
+  line-height: 1.5;
+  margin-top: 40px;
+  text-align: left;
+  font-weight: lighter;
+}
+
+/* Footer */
+
+.footer {
+    position: relative;
+    background-color: #000000;
+    color: #fff;
+    padding-left: 30px;
+    padding-top: 30px;;
+    block-size: 550px;
+    font-size: 18px;
+    text-align: left;
+  }
+
+  .region-language {
+    margin-bottom: 30px;
+    padding: 30px;
+  }
+
+  .region-language strong {
+    display: block;
+    font-size: 1.1em;
+    margin-bottom: 5px;
+  }
+
+  .region-language p{
+    color: #fff;
+  }
+
+  .region-language a {
+    color: #fff;
+    text-decoration: underline;
+    margin-left: 10px;
+    font-size: 0.95em;
+  }
+
+  .footer-top,
+  .footer-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+    margin: 20px 0;
+    padding: 30px;
+    color: #fff;
+  }
+
+  .footer-column {
+    flex: 1;
+    min-width: 250px;
+    color: #fff;
+  }
+
+  .footer-column h4 {
+    font-size: 1.1em;
+    margin-bottom: 8px;
+  }
+
+  .footer-column p {
+    font-size: 0.95em;
+    margin-bottom: 10px;
+    color: #fff;
+  }
+
+  .footer-column button {
+    background-color: #fff;
+    color: #000;
+    padding: 20px 32px;
+    border: none;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 4px;
+    width: 300px;
+  }
+
+  .footer-column button:hover {
+    background-color: #b6b6b6;
+    transition: background-color 0.4s ease;
+  }
+
+  .social-icons {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+  }
+
+  .social-icons a {
+    background-color: #fff;
+    color: #000;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 4px;
+    font-size: 1.2em;
+    text-decoration: none;
+  }
+
+  .footer-links > div {
+    flex: 1;
+    min-width: 200px;
+  }
+
+  .footer-links p {
+    font-size: 0.95em;
+    margin: 6px 0;
+  }
+
+  .footer-bottom {
+    margin-top: 30px;
+    font-size: 0.8em;
+    color: #ccc;
+    line-height: 1.6;
+  }
+
+  .footer-bottom a {
+    color: #ccc;
+    text-decoration: underline;
+    margin-right: 8px;
+  }
+
+  /* Responsive Tweak */
+  @media (max-width: 768px) {
+    .footer-top, .footer-links {
+      flex-direction: column;
+    }
+  }
+
+
+    </style>
+</head>
+<body>
+    <div class="first-page">
+        <div class="bg-video">
+            <video autoplay muted loop playsinline class="bg-clip">
+                <source src="https://www.brabus.com/_Resources/Persistent/8/4/7/7/8477938ea03886d1cabec3cacff614e0674ef643/BRABUS%20900_Deep%20Blue_Porsche_CINE_H264_WEB.mp4" type="video/mp4">
+        </div>
+    </div>
+        <div class="second-page">
+            <div class="text">
+              <h1>BRABUS 900 DEEP BLUE - 911 TURBO S CABRIOLET</h1>
+              <p>Power 588 kW / 800 hp | Torque 1000 Nm | 0-100 km/h 4.0 s | Vmax 240 km/h / 149 mph<br>
+                Fuel Economy* combined 14,7 l/100km | CO2 336 g/km</p>
+            </div>
+            <div class="performance-metrics">
+              <div class="metric">
+                <h2>2,5</h2>
+                <p>0-60</p>
+                <span>KM/H</span>
+              </div>
+              <div class="metric">
+                <h2>1000</h2>
+                <p>TORQUE</p>
+                <span>NM</span>
+              </div>
+              <div class="metric">
+                <h2>900</h2>
+                <p>POWER</p>
+                <span>HP</span>
+              </div>
+              <div class="metric">
+                <h2>340</h2>
+                <p>VMAX</p>
+                <span>KM/H</span>
+              </div>
+            </div>
+          </div>
+    <div class="third-page">
+        <h2>ELEGANT. BRABUS 900 DEEP BLUE.</h2>
+        <p>Like the carefully laid threads of a fitted blue suit, the BRABUS 900 DEEP BLUE is a staple of any classic wardrobe. Impressing with<br>its 900 hp performance output and its unmistakable “Deep Blue” exterior, it seamlessly blends power with precision and, in doing<br> so, takes the concept of bold elegance to new heights. It is luxury reimagined for those who demand performance without comp-<br>romising style. It is captivating design with a typical BRABUS twist.</p>
+    </div>
+
+    <div class="image-slider">
+        <button class="slider-arrow left-arrow">&#8249;</button> <!-- Left Arrow -->
+        <div class="slider-container">
+          <div class="slider-item">
+            <img src="https://www.brabus.com/_Resources/Persistent/5/0/7/c/507cac0a2e543e5576c27f8e9c1d1a25bb07b202/BRABUS%20Deep%20Blue_On%20Location_klein%20%2812%29-1170x780.jpg" 
+                 alt="MERCEDES-AMG G 63(1)">
+          </div>
+          <div class="slider-item">
+            <img src="https://www.brabus.com/_Resources/Persistent/8/a/0/7/8a07ca0be7e8f1b39c2a64956dac204385c5c4c2/BRABUS%20Deep%20Blue_On%20Location_klein%20%2814%29-1170x780.jpg" 
+                alt="MERCEDES-AMG G 63(2)">
+          </div>
+          <div class="slider-item">
+            <img src="https://www.brabus.com/_Resources/Persistent/3/0/b/7/30b78860da401382903bbaaef82259946b7cea22/BRABUS%20Deep%20Blue_On%20Location_klein%20%2816%29-520x780.jpg" 
+            alt="MERCEDES-AMG G 63(3)">
+          </div>
+          <div class="slider-item">
+            <img src="https://www.brabus.com/_Resources/Persistent/a/7/5/1/a751b9b4eab654ded6a73c266d6de92e5fdcf369/BRABUS%20Deep%20Blue_On%20Location_klein%20%2817%29-1170x780.jpg" 
+                alt="MERCEDES-AMG G 63(4)">
+          </div>
+          <div class="slider-item">
+            <img src="https://www.brabus.com/_Resources/Persistent/b/e/4/5/be45ae18068124d46f4343d79b743662f890a16b/BRABUS%20Deep%20Blue_On%20Location_klein%20%2820%29-1170x780.jpg" 
+                alt="MERCEDES-AMG G 63(5)">
+          </div>
+          <div class="slider-item">
+            <img src="https://www.brabus.com/_Resources/Persistent/8/1/e/a/81ea5856bdc601573b96c4b1055f365f8a7e737d/BRABUS%20Deep%20Blue_On%20Location_klein%20%2818%29-1170x780.jpg" 
+                alt="MERCEDES-AMG G 63(6)">
+          </div>
+          <div class="slider-item">
+            <img src="https://www.brabus.com/_Resources/Persistent/d/9/5/9/d959736f200d985170eee3130eaf59c2e6490adc/BRABUS%20Deep%20Blue_On%20Location_klein%20%2819%29-1170x780.jpg" 
+                alt="MERCEDES-AMG G 63(7)">
+          </div>
+          <div class="slider-item">
+            <img src="https://www.brabus.com/_Resources/Persistent/9/a/0/e/9a0e73e004b745e4a3022d5273d0489a430c2d5f/BRABUS%20Deep%20Blue_On%20Location_klein%20%2813%29-520x780.jpg" 
+                alt="MERCEDES-AMG G 63(8)">
+          </div>
+          
+        </div>
+        <button class="slider-arrow right-arrow">&#8250;</button> <!-- Right Arrow -->
+      </div>
+
+      <script>
+document.addEventListener('DOMContentLoaded', () => {
+  const sliderContainer = document.querySelector('.slider-container');
+  const leftArrow = document.querySelector('.left-arrow');
+  const rightArrow = document.querySelector('.right-arrow');
+  const sliderItems = Array.from(document.querySelectorAll('.slider-item'));
+  const sliderItemWidth = sliderItems[0]?.offsetWidth || 0; // Get the width of one slider item
+  let currentIndex = sliderItems.length; // Start at the first original item after duplication
+
+  if (!sliderContainer || !sliderItems.length) {
+    console.error('Slider container or items not found!');
+    return;
+  }
+
+  // Duplicate slider items for seamless looping
+  sliderItems.forEach((item) => {
+    const clone = item.cloneNode(true);
+    sliderContainer.appendChild(clone); // Append clones to the end
+  });
+  sliderItems.forEach((item) => {
+    const clone = item.cloneNode(true);
+    sliderContainer.insertBefore(clone, sliderContainer.firstChild); // Prepend clones to the beginning
+  });
+
+  // Adjust scroll position to the first original item
+  window.addEventListener('load', () => {
+    sliderContainer.scrollLeft = sliderItemWidth * currentIndex;
+  });
+
+  // Function to update the slider position
+  function updateSliderPosition() {
+    sliderContainer.style.scrollBehavior = 'smooth';
+    sliderContainer.scrollLeft = currentIndex * sliderItemWidth;
+  }
+
+  // Event listener for left arrow
+  leftArrow?.addEventListener('click', () => {
+    currentIndex--;
+    updateSliderPosition();
+
+    // Reset position if at the first clone
+    sliderContainer.addEventListener('transitionend', () => {
+      if (currentIndex < sliderItems.length) {
+        sliderContainer.style.scrollBehavior = 'auto'; // Disable smooth scrolling temporarily
+        currentIndex = sliderItems.length * 2 - 1; // Jump to the last original item
+        sliderContainer.scrollLeft = currentIndex * sliderItemWidth;
+      }
+    }, { once: true });
+  });
+
+  // Event listener for right arrow
+  rightArrow?.addEventListener('click', () => {
+    currentIndex++;
+    updateSliderPosition();
+
+    // Reset position if at the last clone
+    sliderContainer.addEventListener('transitionend', () => {
+      if (currentIndex >= sliderItems.length * 2) {
+        sliderContainer.style.scrollBehavior = 'auto'; // Disable smooth scrolling temporarily
+        currentIndex = sliderItems.length; // Jump to the first original item
+        sliderContainer.scrollLeft = currentIndex * sliderItemWidth;
+      }
+    }, { once: true });
+  });
+
+  // Debounce resize event to recalculate item width
+  let resizeTimeout;
+  window.addEventListener('resize', () => {
+    clearTimeout(resizeTimeout);
+    resizeTimeout = setTimeout(() => {
+      const newWidth = sliderItems[0]?.offsetWidth || 0;
+      if (newWidth !== sliderItemWidth) {
+        sliderContainer.style.scrollBehavior = 'auto';
+        sliderContainer.scrollLeft = currentIndex * newWidth;
+      }
+    }, 200);
+  });
+});
+</script>
+
+
+    <div class="fourth-page">
+      <div class="full-card">
+        <img src="https://www.brabus.com/_Resources/Persistent/b/1/7/7/b177b55c24ac7b4b9e21b0f6067c1a8a901f614b/001_BRABUS_900_Deep%20Blue_klein%20%281%29.jpg" alt="image1">
+      </div>
+    <div class="full-card">
+      <img src="https://www.brabus.com/_Resources/Persistent/f/0/2/8/f02891a9017d4ec39e382da641ae06725778ba34/001_BRABUS_900_Deep%20Blue_klein%20%284%29.jpg" alt="image2">
+    </div>
+
+    <div class="full-card">
+      <img src="https://www.brabus.com/_Resources/Persistent/4/3/9/c/439c917c4bd36e17f47ad381a237c35e54aac754/001_BRABUS_900_Deep%20Blue_klein%20%287%29.jpg" alt="image3">
+    </div>
+
+    <div class="full-card">
+      <img src="https://www.brabus.com/_Resources/Persistent/3/b/6/7/3b6764b14a4e6f803c9bf8b17ea4817473659ad5/001_BRABUS_900_Deep%20Blue_klein%20%289%29.jpg" alt="image4">
+    </div>
+
+    <div class="full-card">
+      <img src="https://www.brabus.com/_Resources/Persistent/b/8/7/f/b87f1c9876b7d722e6cde9a6cffffd8068d270f8/001_BRABUS_900_Deep%20Blue_klein%20%2812%29.jpg" alt="image5">
+    </div>
+
+      </div>
+
+<script>
+      const fullCards = document.querySelectorAll('.fourth-page .full-card');
+const fourthPage = document.querySelector('.fourth-page');
+let currentIndex = 0;
+
+// Function to update the active image
+function updateActiveImage() {
+  fullCards.forEach((card, index) => {
+    card.classList.toggle('active', index === currentIndex);
+  });
+}
+
+// Show the first image initially
+updateActiveImage();
+
+// Event listener for clicking on the fourth-page
+fourthPage.addEventListener('click', () => {
+  currentIndex = (currentIndex + 1) % fullCards.length; // Loop back to the first image
+  updateActiveImage();
+});
+  </script>
+
+  <div class="fifth-page">
+    <button class="slider-arrow left-arrow">&#8249;</button> <!-- Left Arrow -->
+    <div class="fifth-container">
+    <div class="fifth-image">
+      <img src="https://www.brabus.com/_Resources/Persistent/0/b/5/1/0b519eabef6f0cace9829371e679041f001a9156/001_BRABUS_900_Deep%20Blue_klein%20%2839%29-1170x780.jpg" alt="image6">
+    </div>
+    <div class="fifth-image">
+      <img src="https://www.brabus.com/_Resources/Persistent/5/5/1/2/5512ccbf1e7c2855ea70029bbcf6e30a388433ba/001_BRABUS_900_Deep%20Blue_klein%20%2840%29-1170x780.jpg" alt="image7">
+    </div>
+    <div class="fifth-image">
+      <img src="https://www.brabus.com/_Resources/Persistent/6/a/2/7/6a27870d55b7df3866fae2ef7737ae8b7a47b3b9/001_BRABUS_900_Deep%20Blue_klein%20%2838%29-1170x780.jpg" alt="image9">
+    </div>
+    <div class="fifth-image">
+      <img src="https://www.brabus.com/_Resources/Persistent/5/9/7/6/597618d21a588dac04ea7eeb04a39d76a3c329ef/001_BRABUS_900_Deep%20Blue_klein%20%2831%29-1170x780.jpg" alt="image10">
+    </div>
+    <div class="fifth-image">
+      <img src="https://www.brabus.com/_Resources/Persistent/3/8/a/f/38af8847398e608fd14391322de66cc377c47b18/001_BRABUS_900_Deep%20Blue_klein%20%2833%29-1170x780.jpg" alt="image11">
+    </div>
+    <div class="fifth-image">
+      <img src="https://www.brabus.com/_Resources/Persistent/1/e/4/8/1e48a1d74ea4012166dc21cbb90d7ecd103963f6/001_BRABUS_900_Deep%20Blue_klein%20%2835%29-1170x780.jpg" alt="image12">
+    </div>
+    <div class="fifth-image">
+      <img src="https://www.brabus.com/_Resources/Persistent/7/7/2/9/7729a76056227f02e89254a94440c2364e6eaac5/001_BRABUS_900_Deep%20Blue_klein%20%2829%29-1170x780.jpg" alt="image13">
+    </div>
+    <div class="fifth-image">
+      <img src="https://www.brabus.com/_Resources/Persistent/5/6/1/2/561293f1f6a6dcdbc16e12440ed4f98e7d368037/001_BRABUS_900_Deep%20Blue_klein%20%2834%29-1170x780.jpg" alt="image14">
+    </div>
+    <div class="fifth-image">
+      <img src="https://www.brabus.com/_Resources/Persistent/6/1/3/c/613c5fa0e02b0a6582c32e374fb5627c4fbaca4d/001_BRABUS_900_Deep%20Blue_klein%20%2830%29-1170x780.jpg" alt="image15">
+    </div>
+    <div class="fifth-image">
+        <img src="https://www.brabus.com/_Resources/Persistent/0/1/6/c/016c587bdd309b882d1e54af78ddeb64c4ba0257/001_BRABUS_900_Deep%20Blue_klein%20%2828%29-1170x780.jpg" alt="image15">
+      </div>
+      <div class="fifth-image">
+        <img src="https://www.brabus.com/_Resources/Persistent/5/9/a/7/59a77e58d76ecf1ebf9401cbcb25bad4cc95de19/001_BRABUS_900_Deep%20Blue_klein%20%2826%29-1170x780.jpg" alt="image15">
+      </div>
+
+    </div>
+    <button class="slider-arrow right-arrow">&#8250;</button> <!-- Right Arrow -->
+    <div class="fifth-text">
+      <h2>Interior. <span class="bold"> Light Blue</span></h2>
+      <p>Inside, the BRABUS 900 DEEP BLUE offers an ocean of bespoke luxury developed to tastefully complement the supercar’s bold exterior with an equally extravagant 1-Second-Wow effect. Featuring the finest BRABUS “Ice Blue” leather throughout, the entire cockpit is adorned with exquisite BRABUS “Ellipse” quilting on the seat surfaces, door panels and floors of both the cockpit and the luggage compartment. The elegant, tone-in-tone design is enhanced by matching piping and stitching in the same vibrant hue, creating a harmonious and refined aesthetic. The seat surfaces and door panels are also precisely perforated, offering an elegant and breathable touch to the luxurious atmosphere.<br><Br>
+
+        Carbon elements across the dashboard, center console and steering wheel reflect the brand-typical combination of performance and style. The interior trim elements, finished in BRABUS “Shadow Gray,” provide a subtle yet striking contrast. Aluminum pedals and a footrest with backlit BRABUS logo integrate seamlessly into the design while offering optimal grip. Carbon entry panels, likewise featuring a backlit BRABUS logo, complete the look, adding a final touch of exclusivity to the BRABUS 900 DEEP BLUE’s interior.</p>
+    </div>
+  
+  </div>
+
+  <script>
+  document.addEventListener('DOMContentLoaded', () => {
+  // Select elements for the fifth-page slider
+  const fifthContainer = document.querySelector('.fifth-container');
+  const fifthImages = document.querySelectorAll('.fifth-image');
+  const leftArrowFifth = document.querySelector('.fifth-page .left-arrow');
+  const rightArrowFifth = document.querySelector('.fifth-page .right-arrow');
+  const fifthPage = document.querySelector('.fifth-page');
+  let fifthImageWidth = fifthImages[0]?.offsetWidth || 0; // Get the width of one image
+  let currentIndexFifth = fifthImages.length; // Start at the first original image after duplication
+  let autoScrollEnabled = true; // Flag to control auto-scroll
+
+  if (!fifthContainer || !fifthImages.length) {
+    console.error('Fifth container or images not found!');
+    return;
+  }
+
+  // Duplicate slider items for seamless looping
+  fifthImages.forEach((item) => {
+    const clone = item.cloneNode(true);
+    fifthContainer.appendChild(clone); // Append clones to the end
+  });
+  fifthImages.forEach((item) => {
+    const clone = item.cloneNode(true);
+    fifthContainer.insertBefore(clone, fifthContainer.firstChild); // Prepend clones to the beginning
+  });
+
+  // Adjust scroll position to the first original item
+  window.addEventListener('load', () => {
+    fifthImageWidth = fifthImages[0].offsetWidth; // Recalculate image width after loading
+    fifthContainer.scrollLeft = fifthImageWidth * currentIndexFifth; // Set initial scroll position
+  });
+
+  // Function to update the slider position
+  function updateFifthSliderPosition() {
+    fifthContainer.style.scrollBehavior = 'smooth';
+    fifthContainer.scrollLeft = currentIndexFifth * fifthImageWidth;
+  }
+
+  // Event listener for left arrow
+  leftArrowFifth?.addEventListener('click', () => {
+    currentIndexFifth--;
+    updateFifthSliderPosition();
+
+    // Reset position if at the first clone
+    fifthContainer.addEventListener('transitionend', () => {
+      if (currentIndexFifth < fifthImages.length) {
+        fifthContainer.style.scrollBehavior = 'auto'; // Disable smooth scrolling temporarily
+        currentIndexFifth = fifthImages.length * 2 - 1; // Jump to the last original image
+        fifthContainer.scrollLeft = currentIndexFifth * fifthImageWidth;
+      }
+    }, { once: true }); // Ensure the event listener runs only once
+  });
+
+  // Event listener for right arrow
+  rightArrowFifth?.addEventListener('click', () => {
+    currentIndexFifth++;
+    updateFifthSliderPosition();
+
+    // Reset position if at the last clone
+    fifthContainer.addEventListener('transitionend', () => {
+      if (currentIndexFifth >= fifthImages.length * 2) {
+        fifthContainer.style.scrollBehavior = 'auto'; // Disable smooth scrolling temporarily
+        currentIndexFifth = fifthImages.length; // Jump to the first original image
+        fifthContainer.scrollLeft = currentIndexFifth * fifthImageWidth;
+      }
+    }, { once: true }); // Ensure the event listener runs only once
+  });
+
+  // Auto-scroll functionality
+  function autoScroll() {
+    if (autoScrollEnabled) {
+      currentIndexFifth++;
+      updateFifthSliderPosition();
+
+      // Reset position if at the last clone
+      fifthContainer.addEventListener('transitionend', () => {
+        if (currentIndexFifth >= fifthImages.length * 2) {
+          fifthContainer.style.scrollBehavior = 'auto'; // Disable smooth scrolling temporarily
+          currentIndexFifth = fifthImages.length; // Jump to the first original image
+          fifthContainer.scrollLeft = currentIndexFifth * fifthImageWidth;
+        }
+      }, { once: true });
+    }
+  }
+
+  // Start auto-scroll every 3 seconds
+  const autoScrollInterval = setInterval(autoScroll, 3000);
+
+  // Stop auto-scroll when the section is in view
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        autoScrollEnabled = false; // Disable auto-scroll
+        clearInterval(autoScrollInterval); // Stop the interval
+      }
+    });
+  });
+
+  // Observe the fifth-page section
+  observer.observe(fifthPage);
+});
+  </script>
+
+  <footer class="footer">
+    <div class="region-language">
+      <strong>Current Region / Language</strong>
+      <p>et Ethiopia / English <a href="https://support.google.com/websearch/answer/3333234?hl=en&co=GENIE.Platform%3DAndroid">Change</a></p>
+    </div>
+
+    <div class="footer-top">
+      <div class="footer-column">
+            <h4>Prices</h4>
+            <p>Check your car price.</p>
+            <a href="../pages/check-prices.html">
+            <button>Check prices</button>
+          </a>
+          </div>
+      <div class="footer-column">
+        <h4>Locations & Contacts</h4>
+        <p>Do you have any questions?</p>
+        <a href="../pages/Contact.html">
+        <button>Get in touch</button>
+      </a>
+      </div>
+      <div class="footer-column">
+        <h4>Social Media</h4>
+        <p>Get in touch with us via social media.</p>
+        <div class="social-icons">
+          <a href="https://www.facebook.com"><i class="fab fa-facebook-f"></i></a>
+          <a href="https://www.instagram.com"><i class="fab fa-instagram"></i></a>
+          <a href="https://www.pinterest.com"><i class="fab fa-pinterest-p"></i></a>
+          <a href="https://www.youtube.com"><i class="fab fa-youtube"></i></a>
+          <a href="https://www.twitter.com"><i class="fab fa-x-twitter"></i></a>
+          <a href="https://www.linkedin.com"><i class="fab fa-linkedin-in"></i></a>
+        </div>
+      </div>
+    </div>
+
+
+  </footer>
+
+</body>
+</html>
